@@ -1,0 +1,180 @@
+.work-wrapper {
+    display: block;
+    position: relative;
+    width: 1200px;
+    position: relative;
+    left: -100px;
+    margin-bottom: 50px;
+
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    .img {
+        position: relative;
+        height: 437px;
+        width: 750px;
+        float: left;
+        padding: 37px 0 0 39px;
+        background: url(../../img/pages/works/border.png) 0 0 no-repeat;
+
+        .work-slider {
+            position: relative;
+            overflow: hidden;
+            width: 707px;
+            height: 363px;
+
+            ul {
+                width: 20000em;
+                position: relative;
+
+                /* Optional, required in this case since it's a <ul> element */
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    width: 707px;
+                    float: left;
+                }
+            }
+        }
+        a {
+            position: absolute;
+            width: 38px;
+            height: 38px;
+            top: 200px;
+            background-color: black;
+            border-radius: 19px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 12px;
+                height: 21px;
+                left: 10px;
+                top: 9px;
+                background-image: url(../../img/pages/works/arrows.png);
+            }
+
+            &.work-slider-prev {
+                left: 67px;
+
+                &:after { background-position: 0 0; }
+
+                &:hover {
+                    &:after { background-position: -12px 0; }
+                }
+            }
+            &.work-slider-next {
+                right: 67px;
+
+                &:after {
+                    left: 15px;
+                    background-position: -36px 0;
+                }
+
+                &:hover {
+                    &:after { background-position: -24px 0; }
+                }
+            }
+        }
+
+        img {
+            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+            filter: gray; /* IE6-9 */
+            -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+            -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
+            -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+
+            &:hover {
+                filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+                -webkit-filter: grayscale(0%);
+            }
+        }
+
+    }
+
+    .description {
+        float: left;
+        width: 400px;
+        margin-top: 28px;
+
+        h2 {
+            font: bold 32px/42px 'pt_sans', Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font: normal 12px/24px Georgia, Helvetica, Arial, sans-serif;
+        }
+
+        .actions {
+            margin-top: 35px;
+
+            .details {
+                margin-right: 30px;
+                border-bottom: 2px solid red;
+
+                font: bold 16px 'pt_sans', Helvetica, Arial, sans-serif;
+                text-decoration: none;
+
+                &:hover {
+                    border: 0;
+                }
+            }
+
+            .download {
+                display: inline-block;
+                width: auto;
+                padding: 0 15px;
+                background: white;
+
+                font: bold 14px/40px 'pt_sans', Helvetica, Arial, sans-serif;
+                text-decoration: none;
+                border: 0;
+                text-align: center;
+
+                &:hover {
+                    background: #9afaff;
+                }
+            }
+        }
+    }
+
+    &.right {
+        .img {
+            text-align: right;
+            float: right;
+            background-position: top right;
+            padding: 37px 39px 0 0;
+        }
+        .work-slider {
+            float: right;
+        }
+    }
+}
+
+.separator {
+    height: 1px;
+    border-bottom: 1px solid #f69a9b;
+    margin-bottom: 85px;
+    width: 1200px;
+    position: relative;
+    left: -100px;
+
+    &:after {
+        content: '';
+        width: 55px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+        top: -16px;
+        background: #eff1e7 url(../../img/pages/works/div-shape.png) center center no-repeat;
+        position: relative;
+        z-index: 99;
+    }
+}

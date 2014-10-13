@@ -1,0 +1,280 @@
+.page-content-header {
+    z-index: 101;
+}
+.examples {
+    margin: 50px 140px 0;
+
+    a {
+        position: relative;
+        margin: 0 2px;
+        border-bottom: 1px dashed black;
+
+        text-decoration: none;
+        font-weight: bold !important;
+
+        &.active:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 37px;
+            height: 18px;
+            z-index: 1000;
+            bottom: -26px;
+            left: 2px;
+
+            background: url(../../img/pages/price/active-example.png) 0 0 no-repeat;
+        }
+
+        span {
+            font-size: 10px;
+        }
+    }
+}
+.example-popup {
+    padding: 43px 0 !important;
+    color: black !important;
+
+    .close {
+        width: 18px;
+        height: 16px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: url(../../img/pages/price/close.png) 0 0 no-repeat;
+    }
+    .slider-control {
+        width: 19px;
+        height: 36px;
+        position: absolute;
+        top: 185px;
+        background-image: url(../../img/pages/price/arrows.png);
+
+        &.slider-next {
+            background-position: -19px 0;
+            right: 12px;
+        }
+        &.slider-prev {
+            background-position: 0 0;
+            left: 12px;
+        }
+    }
+
+    .slider {
+        width: 500px;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+
+        .slider-list {
+            width: 20000em;
+            position: relative;
+
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slider-item {
+            width: 500px;
+            float: left;
+        }
+
+        .img {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font: bold 20px/28px 'pt_sans', Helvetica, Arial, sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .list-wrapper {
+            position: relative;
+
+            &:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+
+            ul {
+                float: left;
+                width: 45%;
+                margin-right: 5%;
+
+                li {
+                    position: relative;
+                    left: 15px;
+                    font: oblique 16px/26px Georgia, Helvetica, Arial, sans-serif;
+
+                    &:before {
+                        content: '\2022';
+                        position: absolute;
+                        left: -15px;
+                        top: 1px;
+                        width: 5px;
+                        height: 17px;
+                    }
+                }
+            }
+        }
+
+        .action {
+            margin-top: 30px;
+
+            a {
+                display: block;
+                width: 270px;
+                margin: 0 auto;
+                background: #9afaff;
+                font: bold 16px/42px 'pt_sans', Helvetica, Arial, sans-serif;
+                text-decoration: none;
+                border: 0;
+                text-align: center;
+            }
+        }
+    }
+}
+.choose-way-header {
+    margin: 80px 140px 0;
+    font-weight: bold !important;
+    font: oblique 18px/26px Georgia, Helvetica, Arial, sans-serif;
+}
+
+.choose-way-wrapper {
+    width: 100%;
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+
+    > div {
+        width: 250px;
+        float: left;
+        margin: 0 40px;
+
+        &:before {
+            content: '';
+            width: 80px;
+            height: 80px;
+            display: block;
+            margin: 0 auto 8px;
+        }
+
+        &.security:before { background: url(../../img/pages/price/guard.png) center center no-repeat; }
+        &.comfort:before { background: url(../../img/pages/price/comfort.png) center center no-repeat; }
+        &.economy:before { background: url(../../img/pages/price/economy.png) center 23px no-repeat; }
+
+        label {
+            font: bold 22px/28px 'pt_sans', Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        ul {
+            text-align: left;
+            font: oblique 16px/24px Georgia, sans-serif;
+            width: 210px;
+            margin: 15px auto 0;
+
+            li {
+                position: relative;
+
+                &:before {
+                    content: '\2022';
+                    position: absolute;
+                    left: -10px;
+                    top: 1px;
+                    width: 5px;
+                    height: 17px;
+                }
+            }
+        }
+
+        &.security ul { margin-left: 30px; }
+        &.comfort ul { margin-left: 32px; }
+        &.economy ul { margin-left: 53px; }
+    }
+}
+.order-form {
+    width: 500px;
+    margin: 70px auto;
+    padding: 60px 0;
+
+    background: white;
+
+    h2 {
+        font: bold 30px/42px 'pt_sans', Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+        margin-bottom: 20px;
+    }
+
+    .form-wrapper {
+        width: 286px;
+        margin: 0 auto;
+
+        input[type="text"] {
+            display: block;
+            width: 272px;
+            border: 1px solid #585a5b;
+            font: oblique 16px/38px 'pt_sans', Helvetica, Arial, sans-serif;
+            margin-bottom: 18px;
+            padding: 0 5px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            background: #9afaff;
+            font: bold 21px/40px 'pt_sans', Helvetica, Arial, sans-serif;
+            border: 0;
+        }
+
+        input.error,
+        textarea.error {
+            border: 1px solid rgba(255, 0, 0, 0.5);
+        }
+    }
+}
+
+/* Uniform override */
+div.checker {
+    width: 24px;
+    height: 24px;
+    border: 2px solid black;
+    position: relative;
+    top: -2px;
+    margin-right: 15px;
+
+    span, input {
+        width: 24px;
+        height: 24px;
+        background: none;
+    }
+
+    span.checked {
+        background: url(../../img/pages/price/checked.png) center center no-repeat !important;
+    }
+}
+
+/* Jquery UI override */
+.ui-dialog {
+    background: white;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 0 35px rgba(0,0,0,.2);
+
+    .ui-dialog-titlebar { display: none; }
+}
+.page-footer {
+    z-index: 99;
+}

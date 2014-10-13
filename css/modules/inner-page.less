@@ -1,0 +1,77 @@
+html {
+    overflow: initial;
+}
+body {
+    overflow-y: initial;
+
+    > header {
+        position: fixed;
+        top: 0;
+        z-index: 260;
+    }
+}
+
+.page-content-header {
+    text-align: center;
+    margin-bottom: 85px;
+    position: relative;
+    z-index: 250;
+
+    h1 {
+        position: relative;
+        margin-top: 0;
+        font: bold 30px/40px 'pt_sans', Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding-bottom: 20px;
+        margin-bottom: 15px;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 1px;
+            border-bottom: 1px solid red;
+            margin: 0 auto;
+            position: relative;
+            top: 15px;
+        }
+    }
+
+    p {
+        font: oblique 18px/26px Georgia, Helvetica, Arial, sans-serif;
+    }
+}
+.content {
+    padding-top: 150px;
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: initial;
+}
+
+.page-footer {
+    height: 70px;
+    background: #dfe1d7;
+    position: relative;
+    z-index: 150;
+
+    .footer-content {
+        width: 570px;
+        margin: 0 auto;
+        font: normal 14px/70px 'pt_sans', Helvetica, Arial, sans-serif;
+
+        .copy {
+            float: left;
+            span { font-weight: bold; }
+        }
+
+        .xd {
+            float: right;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}

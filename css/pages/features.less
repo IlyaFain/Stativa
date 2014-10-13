@@ -1,0 +1,491 @@
+html, body {
+    position: relative;
+    height: 100%;
+    overflow: initial;
+    overflow-x: hidden;
+}
+header {
+    position: fixed;
+}
+.page-content-header {
+    margin-bottom: 60px;
+}
+.frame {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 930px;
+    max-height: 1100px;
+    background: transparent center no-repeat;
+
+    .frame-content {
+        position: relative;
+        width: 420px;
+        padding: 50px;
+        background: rgba(252,252,250,0.8);
+
+        text-align: center;
+        font: oblique 12px/24px Georgia, Helvetica, Arial, sans-serif;
+
+        h2 {
+            margin-bottom: 50px;
+            font: bold 28px/32px 'pt_sans', Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin: 15px 0;
+        }
+    }
+
+    &.light-frame {
+        background-image: url(../../img/pages/features/light-frame-bg.png);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+
+        .lights-switch {
+            position: absolute;
+            width: 69px;
+            height: 92px;
+            top: 50px;
+            right: -115px;
+            background: url(../../img/pages/features/light-button.png) -70px 0 no-repeat;
+
+            &.off { background-position: 0 0; }
+        }
+
+        .lamp {
+            position: absolute;
+            width: 286px;
+            height: 393px;
+            top: 64px;
+            right: -20px;
+            background: url(../../img/pages/features/lamp-off.png) 0 0 no-repeat;
+
+            &:after {
+                content: '';
+                width: 208px;
+                height: 393px;
+                position: absolute;
+                top: 0;
+                left: -67px;
+                background: url(../../img/pages/features/lamp-on.png) 0 0 no-repeat;
+            }
+
+            &.off:after {
+                display: none;
+            }
+        }
+
+        &.off {
+            background-color: #eff1e7 !important;
+        }
+        .overlay {
+            background: #eff1e7;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &.sound-frame {
+        background-image: url(../../img/pages/features/sound-frame-bg.png);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+
+        .music {
+            width: 600px;
+            height: 460px;
+            position: absolute;
+            top: 230px;
+            left: 15px;
+
+            .equalizer { height:341px }
+            .eqWrap { margin:-1px 0 0 -2px; overflow:hidden; display:inline-block;}
+            .eqCol {width:38px; margin:0 0 0 15px; float:left;}
+            .eqItem { height:9px; width:100%; background:#e7aa3b; margin:7px 0 0 0; opacity:0}
+            .eqItem:nth-child(1),
+            .eqItem:nth-child(2),
+            .eqItem:nth-child(3),
+            .eqItem:nth-child(4),
+            .eqItem:nth-child(5),
+            .eqItem:nth-child(6),
+            .eqItem:nth-child(7) { background:#ec5454; }
+
+            .eqItem:nth-child(8),
+            .eqItem:nth-child(9),
+            .eqItem:nth-child(10),
+            .eqItem:nth-child(11),
+            .eqItem:nth-child(12),
+            .eqItem:nth-child(13) { background:#eea635; }
+
+            .eqItem:nth-child(14),
+            .eqItem:nth-child(15),
+            .eqItem:nth-child(16),
+            .eqItem:nth-child(17) { background:#f0db4d; }
+
+            .eqItem:nth-child(18),
+            .eqItem:nth-child(19),
+            .eqItem:nth-child(20),
+            .eqItem:nth-child(21) { background:#87cd35; }
+
+            .eqCol .eqItem:last-child {opacity:1 !important}
+
+            .sound-control {
+                position: relative;
+                width: 280px;
+                height: 60px;
+                padding: 0 15px;
+                margin-bottom: 40px;
+                border-radius: 3px;
+                background: #d3d5cc;
+                border: 1px solid #b2b3ad;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.1) inset, 0 0 2px rgba(0, 0, 0, 0.1) inset;
+
+                color: white;
+                font: normal 16px/60px Arial,serif;
+
+                .play {
+                    position: absolute;
+                    top: -1px;
+                    right: -1px;
+                    width: 67px;
+                    height: 62px;
+                    border-radius: 3px;
+                    box-shadow: 0px 0px 4px rgba(0,0,0,.2);
+
+                    background: #f4f4f4; /* Old browsers */
+                    background: -moz-linear-gradient(left,  #f4f4f4 0%, #e3e3e3 100%); /* FF3.6+ */
+                    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f4f4f4), color-stop(100%,#e3e3e3)); /* Chrome,Safari4+ */
+                    background: -webkit-linear-gradient(left,  #f4f4f4 0%,#e3e3e3 100%); /* Chrome10+,Safari5.1+ */
+                    background: -o-linear-gradient(left,  #f4f4f4 0%,#e3e3e3 100%); /* Opera 11.10+ */
+                    background: -ms-linear-gradient(left,  #f4f4f4 0%,#e3e3e3 100%); /* IE10+ */
+                    background: linear-gradient(to right,  #f4f4f4 0%,#e3e3e3 100%); /* W3C */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#e3e3e3',GradientType=1 ); /* IE6-9 */
+
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 14px;
+                        left: 16px;
+                        width: 39px;
+                        height: 40px;
+                        background-image: url(../../img/pages/features/play-button.png);
+                        background-position: 0 0;
+                        background-repeat: no-repeat;
+                    }
+
+                    &:hover {
+                        &:after {
+                            background-position: -40px 0;
+                        }
+                    }
+
+                    &.stop {
+                        &:after {
+                            background-position: -79px 0;
+                        }
+
+                        &:hover {
+                            &:after {
+                                background-position: -119px 1px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .frame-content {
+            position: relative;
+            float: right;
+            width: 450px;
+            top: 20px;
+            z-index: 120;
+        }
+    }
+
+    &.climate-frame {
+        background-attachment:fixed;
+
+        .bg-wrapper {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: url(../../img/pages/features/climate-frame-bg.png);
+            background-position: bottom center;
+            background-repeat: no-repeat;
+        }
+
+        .climate-control {
+            position: absolute;
+            top: 46px;
+            right: -125px;
+            width: 85px;
+            height: 85px;
+            background: url(../../img/pages/features/climate-control.png) 0 0 no-repeat;
+            cursor: pointer;
+
+            span {
+                color: white;
+                font: normal 16px/77px Arial, serif;
+                position: relative;
+                left: -2px;
+            }
+
+            .bubble {
+                position: absolute;
+                top: -46px;
+                left: 40px;
+                height: 40px;
+                font: normal 14px/40px Arial, serif;
+                background: rgba(252, 252, 250, 0.8);
+                border-radius: 5px;
+                padding: 0 15px;
+                width: auto;
+                white-space: nowrap;
+                color: #999;
+
+                &:after {
+                    content: '';
+                    width: 10px;
+                    height: 8px;
+                    position: absolute;
+                    bottom: -8px;
+                    left: 20px;
+                    background: url(../../img/pages/features/bubble-pointer.png) 0 0 no-repeat;
+                }
+            }
+        }
+    }
+
+    &.security-frame {
+        background-image: url(../../img/pages/features/interface-frame-bg.png);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+
+        .content {
+            padding-top: 80px;
+        }
+        .frame-content {
+            width: 530px;
+            z-index: 100;
+        }
+
+        .iphone {
+            position: absolute;
+            top: 43px;
+            right: -208px;
+            background: url(../../img/pages/features/security-bg.jpg) top left no-repeat;
+            width: 630px;
+            height: 709px;
+
+            .password {
+                width: 200px;
+                height: 50px;
+                position: absolute;
+                top: 62px;
+                left: 50px;
+
+                font-family: Roboto, sans-serif;
+                color: #d3d5cc;
+                font-size: 30px;
+
+                span {
+                    margin-right: 10px;
+                    display: none;
+                }
+            }
+
+            .alert {
+                position: absolute;
+                width: 185px;
+                height: 155px;
+                top: 317px;
+                left: 188px;
+                padding: 7px 10px;
+                display: none;
+
+                font-family: Roboto,sans-serif;
+                color: #fff;
+                font-size: 12px;
+                background: url(../../img/pages/features/security-alert-bg.png) 0 0 no-repeat;
+                line-height: 150%;
+            }
+        }
+    }
+
+    &.interface-frame {
+        background-image: url(../../img/pages/features/interface-frame-bg.png);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+
+        .frame-content {
+            position: relative;
+            float: right;
+            width: 450px;
+            top: 0;
+            left: 128px;
+            z-index: 120;
+        }
+
+        .ipad {
+            position: absolute;
+            top: 200px;
+            left: -64px;
+            background: url(../../img/pages/features/ipad-bg.jpg) top left no-repeat;
+            width: 784px;
+            height: 639px;
+
+            .rooms-list {
+                position: absolute;
+                width: 149px;
+                height: auto;
+                top: 162px;
+                right: 131px;
+
+                font-family: 'Roboto', sans-serif;
+                color: white;
+                font-size: 12px;
+
+                .floor {
+                    background: #383c45;
+                    height: 25px;
+                    line-height: 25px;
+                    padding-left: 24px;
+                    margin-bottom: 1px;
+                }
+
+                .room {
+                    height: 25px;
+                    line-height: 25px;
+                    padding-left: 35px;
+                    margin-bottom: 1px;
+
+                    -webkit-transition: all 0.5s ease;
+                    -moz-transition: all 0.5s ease;
+                    -o-transition: all 0.5s ease;
+                    -ms-transition: all 0.5s ease;
+
+                    &.active {
+                        background: #383c45;
+                    }
+                }
+            }
+
+            .rooms-condition {
+                width: 379px;
+                height: auto;
+                position: absolute;
+                top: 427px;
+                left: 123px;
+
+                .item {
+                    width: 114px;
+                    float: left;
+                    margin-right: 2px;
+                    margin-bottom: 2px;
+                    padding-left: 10px;
+
+                    background: #383c45;
+                    font-family: Roboto,sans-serif;
+                    color: #a4a6ac;
+                    font-size: 8px;
+
+                    .condition {
+                        font-size: 12px;
+                        color: #fff;
+                        margin-bottom: 1px;                    }
+                }
+            }
+
+            .lights {
+                > div {
+                    display: none;
+                }
+                .third-floor {
+                    width: 74px;
+                    height: 74px;
+                    position: absolute;
+                    top: 225px;
+                    left: 310px;
+                    background: url(../../img/pages/features/interface-third-floor.png) 0 0 no-repeat;
+                }
+                .second-floor {
+                    width: 102px;
+                    height: 93px;
+                    position: absolute;
+                    top: 249px;
+                    left: 295px;
+                    background: url(../../img/pages/features/interface-second-floor.png) 0 0 no-repeat;
+                }
+                .first-floor {
+                    width: 102px;
+                    height: 101px;
+                    position: absolute;
+                    top: 283px;
+                    left: 296px;
+                    background: url(../../img/pages/features/interface-first-floor.png) 0 0 no-repeat;
+                }
+            }
+        }
+    }
+
+    &.auto-frame {
+
+        background-image: url(../../img/pages/features/auto-frame-bg.jpg);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+
+        .content {
+            padding: 0;
+        }
+
+        .frame-content {
+            position: relative;
+            float: right;
+            width: 450px;
+            top: 280px;
+            left: 50px;
+            z-index: 120;
+        }
+
+        .gate-wrapper {
+            width: 727px;
+            height: 578px;
+            position: absolute;
+            bottom: 65px;
+            left: -62px;
+            overflow: hidden;
+
+            .gate {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background: url(../../img/pages/features/gate-bg.png) 0 0 repeat-y;
+
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: 94px;
+                    position: absolute;
+                    bottom: -94px;
+                    left: -1px;
+                    background: url(../../img/pages/features/gate-shadow.png) 0 0 no-repeat;
+                }
+            }
+        }
+        .content {
+            position: relative;
+            height: 100%;
+        }
+    }
+}
+.page-footer {
+    width: 100%;
+}

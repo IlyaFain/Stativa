@@ -1,0 +1,51 @@
+/*
+	Reset
+*/
+body,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-type: none;
+}
+noscript {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  line-height: 32px;
+  z-index: 9999;
+  text-align: center;
+  background: #cc0000;
+  color: white;
+}
+input::-ms-clear {
+  width: 0;
+  height: 0;
+}
+input,
+textarea {
+  box-shadow: none;
+  outline: none;
+}
+:focus:-moz-placeholder {
+  color: transparent;
+}
+:focus::-moz-placeholder {
+  color: transparent;
+}
+:focus:-ms-input-placeholder {
+  color: transparent;
+}
+:focus::-webkit-input-placeholder {
+  color: transparent;
+}
