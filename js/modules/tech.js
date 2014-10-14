@@ -38,10 +38,10 @@ $(function(){
                 min: position.top - 100 - (i == 5 ? 200 : 0),
                 max: position.top + $(this).height() - (i == 4 ? 200 : 0),
                 onEnter: function(element, position) {
-//                    Frame.enter($(element).data('frame'));
+                    Frame.enter($(element).data('frame'));
                 },
                 onLeave: function(element, position) {
-//                    Frame.leave($(element).data('frame'));
+                    Frame.leave($(element).data('frame'));
                 }
             });
         });

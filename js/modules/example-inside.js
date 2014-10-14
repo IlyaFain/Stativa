@@ -1,5 +1,4 @@
 $(function(){
-    alert(UtilityHasTouch());
     if(!UtilityHasTouch()) {
         skrollr.init({
             smoothScrolling: false,
