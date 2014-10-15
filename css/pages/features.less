@@ -1,6 +1,5 @@
 html, body {
     position: relative;
-    height: 100%;
     overflow: initial;
     overflow-x: hidden;
 }
@@ -444,6 +443,8 @@ header {
 
         .content {
             padding: 0;
+            position: relative;
+            height: 100%;
         }
 
         .frame-content {
@@ -455,11 +456,17 @@ header {
             z-index: 120;
         }
 
+        .gate-container {
+            width: 1000px;
+            height: 578px;
+            margin: 0 auto;
+            position: relative;
+        }
         .gate-wrapper {
             width: 727px;
             height: 578px;
             position: absolute;
-            bottom: 65px;
+            bottom: -287px;
             left: -62px;
             overflow: hidden;
 
@@ -479,10 +486,6 @@ header {
                     background: url(../../img/pages/features/gate-shadow.png) 0 0 no-repeat;
                 }
             }
-        }
-        .content {
-            position: relative;
-            height: 100%;
         }
     }
 }

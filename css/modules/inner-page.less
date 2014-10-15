@@ -8,6 +8,77 @@ body {
         position: fixed;
         top: 0;
         z-index: 260;
+        overflow: initial;
+
+        .callback {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: white;
+            font: 16px/38px 'pt_sans', Helvetica, Arial, sans-serif;
+            color: #282828;
+
+            .form {
+                min-width: 229px;
+                text-align: left;
+            }
+            .form .form-wrapper {
+                padding: 20px;
+            }
+            input {
+                border: 0;
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                border-radius: 0;
+                height: 38px;
+                line-height: 38px;
+            }
+            input.error {
+                outline: 1px solid rgba(255, 0, 0, 0.5);
+            }
+            .phone,
+            .name {
+                display: block;
+                background: #9afaff;
+                margin-bottom: 10px;
+                padding-left: 5px;
+                color: #3e5758;
+            }
+            .submit {
+                background: #282828;
+                color: white;
+                font-size: 80%;
+                padding: 0 10px;
+                -webkit-transition: background-color 0.2s ease-out;
+                -moz-transition: background-color 0.2s ease-out;
+                transition: background-color 0.2s ease-out;
+            }
+            .submit:hover {
+                background: #3c3c3c;
+            }
+            .toggle {
+                width: auto;
+                height: 38px;
+                padding-left: 20px;
+                padding-right: 50px;
+                text-align: left;
+                border-top: 1px solid #eff1e7;
+                border-bottom: 1px solid #9afaff;
+                background-image: url(../../img/arrow/callback.png);
+                background-position: right top;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                -webkit-transition: background-color 0.2s ease-out;
+                -moz-transition: background-color 0.2s ease-out;
+                transition: background-color 0.2s ease-out;
+            }
+            .toggle.is-open {
+                background-position: right bottom;
+            }
+            .toggle:hover {
+                background-color: #fafafa;
+            }
+        }
     }
 }
 
