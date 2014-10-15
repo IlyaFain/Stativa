@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <!--[if IE 8]> <html class="ie8"> <![endif]-->
 <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
@@ -7,7 +5,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Главная страница - Stativa</title>
-	<meta name="description" content="">
+	<meta name="description" content="Система для создания умного дома">
+
+
 
 	<!-- development --><script src="js/default/jquery-1.10.2.min.js"></script>
 	<!-- production --><!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
@@ -18,11 +18,13 @@
 	<script src="js/default/masonry.pkgd.min.js"></script>
 	<script src="js/default/jquery.lazy.min.js"></script>
 	<script src="js/default/jquery.validate.js"></script>
+	<script src="js/default/lightbox.min.js"></script>
+	<link rel="stylesheet" href="css/default/fotorama.css">
+	<script src="js/default/fotorama.js"></script>
 
-
-	<link rel="stylesheet" href="css/modules/common.css?05.08.14-18:24"/>
-    <link rel="stylesheet" href="css/pages/main.css?05.08.14-22:01"/>
-    <script src="js/modules/common.js?05.08.14-22:42"></script>
+	<link rel="stylesheet" href="css/modules/common.css?10.10.14-10:14"/>
+	<link rel="stylesheet" href="css/pages/main.css?15.10.14-11:51"/>
+	<script src="js/modules/common.js?13.10.14-08:06"/></script>
 
 	<!--[if lte IE 8]>
 		<script type="text/javascript" src="js/default/html5.js"></script>
@@ -32,15 +34,33 @@
 
 </head>
 
-<body class="main">
+
+
+
+<body class="main js-fullscreen">
 
 	<noscript><b>В вашем браузере выключен javascript!</b> Полная функциональность сайта может быть недоступна.</noscript>
+
+
+
 	<header>
 		<div class="wrapper">
 			<a class="logo" href="#">
 				<img src="img/logo/stativa_header.png" alt="Stativa">
 			</a>
-			
+
+			<ul class="main-menu">
+				<li class="current"><a href="#">Примеры реализации</a></li>
+				<li><a href="#">Установка и&nbsp;технологии</a></li>
+				<li><a href="#">Возможности</a></li>
+				<li><a href="#">Стоимость</a></li>
+				<li><a href="#">Контактная информация</a></li>
+			</ul>
+		</div>
+	</header>
+
+
+	<div class="callback-wrapper">
 			<div class="callback">
 				<div class="form">
 					<form id="callback_form" class="form js-validate" method="POST" action="callback.php">
@@ -53,18 +73,9 @@
 				</div>
 				<div id="callback_toggle" class="toggle">Обратный звонок</div>
 			</div>
-			
-			<ul class="main-menu">
-				<li class="current"><a href="#">Примеры реализации</a></li>
-				<li><a href="#">Установка и технологии</a></li>
-				<li><a href="#">Возможности</a></li>
-				<li><a href="#">Стоимость</a></li>
-				<li><a href="#">Контактная информация</a></li>
-			</ul>
-		</div>
-	</header>
+	</div>
 
-	<div class="content">
+	<div class="content js-fullscreen">
 
 
 
@@ -82,12 +93,10 @@
 								<li class="partner-2"><a href="#"></a></li>
 								<li class="partner-3"><a href="#"></a></li>
 								<li class="partner-4"><a href="#"></a></li>
-							</ul>
-							
-							<ul class="icons">
 								<li class="partner-5"><a href="#"></a></li>
 								<li class="partner-6"><a href="#"></a></li>
 								<li class="partner-7"><a href="#"></a></li>
+								<li class="partner-9"><a href="#"></a></li>
 								<li class="partner-8"><a href="#"></a></li>
 							</ul>
 						</div>
@@ -108,8 +117,8 @@
 
 						<div class="subtitle"><span>Частный дом,<br>площадью</span><br>1500 м<sup>2</sup></div>
 
-						<div class="masonry-open-wrapper">
-							<a id="masonry_open" class="masonry-open" href="#" title="Открыть">Фотографии</a>
+						<div class="fotorama-open-wrapper">
+							<a id="fotorama_open" class="fotorama-open" href="#" title="Открыть">Фотографии</a>
 						</div>
 
 						<div class="jcarousel-wrapper">
@@ -120,6 +129,21 @@
 											<h3 class="jcarousel-title">Управляемое освещение</h3>
 											<p>Внутренняя отделка дома выполнена из полупрозрачного натурального камня (оникса). Элементы каменной инкрустации декоративно подсвечены.  Художественный свет выделяет определенные элементы каменного рисунка, что позволяет создавать множество разнообразных  форм восприятия дизайна. Световые сценарии могут быть созданы пользователем по своему настроению. Система контроля присутствия включает заданный световой стиль в комнате, если  в ней находятся люди. Через заданное время после ухода людей из комнаты система переключает освещение в дежурный режим, предварительно заданный пользователем. В случае необходимости пользователь может в ручную выбрать любые световые конфигурации, отключив автоматический режим.</p>
 											<p>Аналогично решена задача ландшафтного и фасадного освещения. Созданный пользователем сценарии автоматически включаются с наступлением сумерек и могут  быть произвольно переключены вручную.</p>
+
+											<div class="lightbox-wrapper">
+												<a class="lighbox-preview" href="img/photo/lightbox/photo1.jpg" data-lightbox="examples">
+													<img src="img/photo/lightbox/preview1.jpg">
+												</a>
+												<a class="lighbox-preview" href="img/photo/lightbox/photo2.jpg" data-lightbox="examples">
+													<img src="img/photo/lightbox/preview2.jpg">
+												</a>
+												<a class="lighbox-preview" href="img/photo/lightbox/photo3.jpg" data-lightbox="examples">
+													<img src="img/photo/lightbox/preview3.jpg">
+												</a>
+												<a class="lighbox-preview" href="img/photo/lightbox/photo4.jpg" data-lightbox="examples">
+													<img src="img/photo/lightbox/preview4.jpg">
+												</a>
+											</div>
 										</div>
 									</li>
 									<li>
@@ -159,6 +183,7 @@
 								<div class="jcarousel-control-next">&rsaquo;</div>
 							</div>
 						</div>
+
 
 					</div>
 
@@ -248,9 +273,24 @@
 
 					</div>
 
-
 					<div id="masonry_close_wrapper" class="masonry-close-wrapper">
 						<a class="masonry-close" href="#" title="Закрыть">Закрыть</a>
+					</div>
+
+
+
+
+					<div id="fotorama" class="fotorama-wrapper is-closed">
+						<div class="fotorama" data-width="100%" data-height="100%" data-fit="cover" data-nav="thumbs">
+							<img src="img/photo/color/1.jpg">
+							<img src="img/photo/color/2.jpg">
+							<img src="img/photo/color/3.jpg">
+						</div>
+					</div>
+
+
+					<div id="fotorama_close_wrapper" class="fotorama-close-wrapper">
+						<a class="fotorama-close" href="#" title="Закрыть">Закрыть</a>
 					</div>
 
 
@@ -288,10 +328,10 @@
 								<div class="center">Безусловно, обустройство Умного Дома требует затрат, однако правильнее будет называть их инвестициями. Наша система сделает все возможное, чтобы повысить уровень энергосбережения и снизить ваши расходы. Она способна:</div>
 
 								<ul class="icons">
-									<li class="icon-economy-1">звукового и светового оповещения</li>
-									<li class="icon-economy-2">отправки SMS или голосового сообщения на Ваш телефон или телефон доверенного лица</li>
-									<li class="icon-economy-3">передачи тревожного сигнала на пост охраны или в соответствующие службы</li>
-									<li class="icon-economy-4">воздействия непосредственно на источник угрозы</li>
+									<li class="icon-economy-1"><span>звукового и светового оповещения</span></li>
+									<li class="icon-economy-2"><span>отправки SMS или голосового сообщения на Ваш телефон или телефон доверенного лица</span></li>
+									<li class="icon-economy-3"><span>передачи тревожного сигнала на пост охраны или в соответствующие службы</span></li>
+									<li class="icon-economy-4"><span>воздействия непосредственно на источник угрозы</span></li>
 								</ul>
 							</li>
 
@@ -302,20 +342,26 @@
 								<div class="center">Умный Дом может реагировать на те или иные отклонения от нормы посредством:</div>
 								
 								<ul class="icons">
-									<li class="icon-secure-1">звукового и светового оповещения</li>
-									<li class="icon-secure-2">отправки SMS или голосового сообщения на Ваш телефон или телефон доверенного лица</li>
-									<li class="icon-secure-3">передачи тревожного сигнала на пост охраны или в соответствующие службы</li>
-									<li class="icon-secure-4">воздействия непосредственно на источник угрозы</li>
+									<li class="icon-secure-1"><span>звукового и светового оповещения</span></li>
+									<li class="icon-secure-2"><span>отправки SMS или голосового сообщения на Ваш телефон или телефон доверенного лица</span></li>
+									<li class="icon-secure-3"><span>передачи тревожного сигнала на пост охраны или в соответствующие службы</span></li>
+									<li class="icon-secure-4"><span>воздействия непосредственно на источник угрозы</span></li>
 								</ul>
 								
 								<div class="center">Говорят, что безопасности много не бывает. Но в Умном Доме – бывает.<br>
 									Наша централизованная система способна быстро распознать:</div>
 								
 								<ul class="icons">
-									<li class="icon-secure-5">пожар</li>
-									<li class="icon-secure-6">утечку газа или воды</li>
-									<li class="icon-secure-7">отказ системы отопления</li>
-									<li class="icon-secure-8">несанкционированное вторжение</li>
+									<li class="icon-secure-5"><span>пожар</span></li>
+									<li class="icon-secure-6"><span>утечку газа или воды</span></li>
+									<li class="icon-secure-7"><span>отказ системы отопления</span></li>
+									<li class="icon-secure-8"><span>несанкционированное вторжение</span></li>
+								</ul>
+
+								<ul class="icons">
+									<li class="icon-secure-9"><span>открытие окон и дверей</span></li>
+									<li class="icon-secure-10"><span>отключение электричества</span></li>
+									<li class="icon-secure-11"><span>отказ дизель-генераторной установки</span></li>
 								</ul>
 							</li>
 
@@ -327,18 +373,18 @@
 								<div class="center">Что может сделать дом комфортнее, чем современная и правильно настроенная автоматика? Наши системы умеют:</div>
 								
 								<ul class="icons">
-									<li class="icon-comfort-1">закрывать мансардные окна, если начался дождь</li>
-									<li class="icon-comfort-2">выполнять команды, поступающие с вашего мобильного телефона, планшета или компьютера</li>
-									<li class="icon-comfort-3">распознавать номера машин хозяев и гостей</li>
-									<li class="icon-comfort-4">моментально реагировать с помощью датчиков движения</li>
-									<li class="icon-comfort-5">окружать вас любимой музыкой в доме и во дворе</li>
+									<li class="icon-comfort-1"><span>закрывать мансардные окна, если начался дождь</span></li>
+									<li class="icon-comfort-2"><span>выполнять команды, поступающие с вашего мобильного телефона, планшета или компьютера</span></li>
+									<li class="icon-comfort-3"><span>распознавать номера машин хозяев и гостей</span></li>
+									<li class="icon-comfort-4"><span>моментально реагировать с помощью датчиков движения</span></li>
+									<li class="icon-comfort-5"><span>окружать вас любимой музыкой в доме и во дворе</span></li>
 								</ul>
 
 								<ul class="icons">
-									<li class="icon-comfort-6">создавать настроение красивым освещением гостиной и спальни</li>
-									<li class="icon-comfort-7">ночью и днем следить за безопасностью дома и его обитателей</li>
-									<li class="icon-comfort-8">встречать гостей праздничной подсветкой дома и лужаек</li>
-									<li class="icon-comfort-9">вовремя предупреждать об аварии в котельной или в электрощитовой</li>
+									<li class="icon-comfort-6"><span>создавать настроение красивым освещением гостиной и спальни</span></li>
+									<li class="icon-comfort-7"><span>ночью и днем следить за безопасностью дома и его обитателей</span></li>
+									<li class="icon-comfort-8"><span>встречать гостей праздничной подсветкой дома и лужаек</span></li>
+									<li class="icon-comfort-9"><span>вовремя предупреждать об аварии в котельной или в электрощитовой</span></li>
 								</ul>
 							</li>
 
@@ -464,7 +510,7 @@
 		<section class="g-text g-text-inside g-text-inside-with-bg butler md-modal"	>
 			<div class="title">Система может стать вашим дворецким</div>
 			<div class="description">
-				Вам достаточно будет один раз настроить расписание и он будет заранее включать различные системы.  В зависимости от времени суток, температуры, освещенности он закроет, или откроет окна, двери, или ворота. Вам достаточно будет один раз настроить расписание и он будет заранее включать различные системы. В зависимости от времени суток, температуры, освещенности он закроет, или откроет окна, двери, или ворота.
+				Вам достаточно будет один раз&nbsp;настроить расписание и&nbsp;он будет заранее включать различные системы.  В&nbsp;зависимости от&nbsp;времени суток, температуры, освещенности он&nbsp;закроет, или&nbsp;откроет окна, двери, или&nbsp;ворота.
 			</div>
 		</section>
 
@@ -472,7 +518,7 @@
 		<section class="g-text g-text-inside g-text-inside-with-bg designer md-modal"	>
 			<div class="title">Функция дизайнера</div>
 			<div class="description">
-				Встречайте гостей в яркой атмосфере вечеринки, созданной Вашим личным дизайнером. Кстати, в отличие от живого дизайнера, он может быстро организовать романтичное и мягкое освещение спальни, не появляясь в ней в неподходящий момент.
+				Встречайте гостей в&nbsp;яркой атмосфере вечеринки, созданной Вашим личным дизайнером. Кстати, в&nbsp;отличие от&nbsp;живого дизайнера, он&nbsp;может быстро организовать романтичное и&nbsp;мягкое освещение спальни, не&nbsp;появляясь в&nbsp;ней в&nbsp;неподходящий момент.
 			</div>
 		</section>
 
@@ -480,7 +526,7 @@
 		<section class="g-text g-text-inside g-text-inside-with-bg dj md-modal"	>
 			<div class="title">Ди-джей к вашим услугам</div>
 			<div class="description">
-				Ваш совершенный музыкальный вкус в надежных руках: профессиональный ди-джей в лице Вашего дома как никто другой знает, что Вы любите. Кроме того, в нужный момент он с удовольствием исполнит обязанности киномеханика.
+				Ваш совершенный музыкальный вкус в&nbsp;надежных руках: профессиональный ди-джей в&nbsp;лице Вашего дома как&nbsp;никто другой знает, что&nbsp;Вы любите. Кроме того, в&nbsp;нужный момент он&nbsp;с удовольствием исполнит обязанности киномеханика.
 			</div>
 		</section>
 
@@ -488,7 +534,7 @@
 		<section class="g-text g-text-inside g-text-inside-with-bg housekeeper md-modal"	>
 			<div class="title">Педантичная экономка</div>
 			<div class="description">
-				Вышеописанную мужскую компанию отлично дополняет совершенная в своей внимательности экономка. Она точно знает, когда нужно выключать воду, отопление и электроприборы. Кроме того, мы уверены, что она никогда не даст Вашей супруге повода для ревности.
+				Вышеописанную мужскую компанию отлично дополняет совершенная в&nbsp;своей внимательности экономка. Она точно знает, когда нужно выключать воду, отопление и&nbsp;электроприборы. Кроме того, мы&nbsp;уверены, что&nbsp;она никогда не&nbsp;даст Вашей супруге повода для&nbsp;ревности.
 			</div>
 		</section>
 
@@ -496,7 +542,7 @@
 		<section class="g-text g-text-inside g-text-inside-with-bg fireman md-modal"	>
 			<div class="title">Чуткий пожарный</div>
 			<div class="description">
-				Будем надеяться, что в этом амплуа Вашему дому выступить не доведется. Однако знайте, что при малейших признаках задымления или повышения температуры, он немедленно оповестит соответствующие службы и Вас лично.
+				Будем надеяться, что&nbsp;в этом амплуа Вашему дому выступить не&nbsp;доведется. Однако знайте, что&nbsp;при малейших признаках задымления или&nbsp;повышения температуры, он&nbsp;немедленно оповестит соответствующие службы и&nbsp;Вас лично.
 			</div>
 		</section>
 
@@ -504,7 +550,7 @@
 		<section class="g-text g-text-inside g-text-inside-with-bg security md-modal"	>
 			<div class="title">Вежливый охранник</div>
 			<div class="description">
-				Умный нарушитель едва ли попытается незаконно проникнуть в Умный Дом. Ну а что до прочих, то оставим их на совесть бдительного охранника, круглосуточно следящего за Вашими владениями зоркими глазами-камерами.
+				Умный нарушитель едва ли&nbsp;попытается незаконно проникнуть в&nbsp;Умный Дом. Ну а&nbsp;что до&nbsp;прочих, то&nbsp;оставим их&nbsp;на совесть бдительного охранника, круглосуточно следящего за&nbsp;Вашими владениями зоркими глазами-камерами.
 			</div>
 		</section>
 
@@ -513,7 +559,7 @@
 		<section class="g-text main md-modal"	>
 			<div class="title">Умная система управления вашим домом</div>
 			<div class="description">
-				Выходя из дома, вы часто спрашиваете себя – не забыт ли где-то в комнате включенный свет? И вынуждены проходить по всем помещениям с целью проверки. Хотите подчеркнуть тонкий дизайн Вашей гостиной? Это будет нелегко без правильно выбранной подсветки. Вы уехали в отпуск и волнуетесь о сохранности Вашего имущества? Ваш дом может демонстрировать Ваше присутствие, включая освещение в обычном режиме. Это может отпугнуть воров.
+				Выходя из&nbsp;дома, вы&nbsp;часто спрашиваете себя – не&nbsp;забыт ли&nbsp;где-то в&nbsp;комнате включенный свет? И вынуждены проходить по&nbsp;всем помещениям с&nbsp;целью проверки. Хотите подчеркнуть тонкий дизайн Вашей гостиной? Это будет нелегко без&nbsp;правильно выбранной подсветки. Вы уехали в&nbsp;отпуск и&nbsp;волнуетесь о&nbsp;сохранности Вашего имущества? Ваш дом&nbsp;может демонстрировать Ваше присутствие, включая освещение в&nbsp;обычном режиме. Это может отпугнуть воров.
 				<div class="next">
 					<a href="#" id="start"><span>Возможности системы</span></a>
 				</div>

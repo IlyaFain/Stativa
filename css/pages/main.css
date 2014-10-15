@@ -8,6 +8,11 @@ section.g-sprites.butler {
 	.background-size(100% 100%);
 } */
 }
+section.g-sprites.butler .sprite {
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  -moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
 section.g-sprites.butler .room {
   position: absolute;
   width: 100%;
@@ -16,15 +21,15 @@ section.g-sprites.butler .room {
   bottom: 187px;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: 45% auto;
-  -moz-background-size: 45% auto;
-  -o-background-size: 45% auto;
-  background-size: 45% auto;
+  -webkit-background-size: 605px auto;
+  -moz-background-size: 605px auto;
+  -o-background-size: 605px auto;
+  background-size: 605px auto;
   background-position: left bottom;
   background-color: #eff1e7;
-  -webkit-transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-  -moz-transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-  transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  -webkit-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  -moz-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
 }
 section.g-sprites.butler .room.loaded {
   background-image: url("../../img/pages/main/room.png");
@@ -62,9 +67,9 @@ section.g-sprites.butler .hang {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-  -moz-transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-  transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
 }
 section.g-sprites.butler .hang.loaded {
   background-image: url("../../img/pages/main/hang.png");
@@ -72,31 +77,40 @@ section.g-sprites.butler .hang.loaded {
 section.g-sprites.butler .couch {
   position: absolute;
   width: 350px;
-  height: 200px;
+  height: 230px;
   left: 28%;
-  bottom: 130px;
+  bottom: 110px;
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: 100% auto;
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-  -moz-transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-  transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
 }
 section.g-sprites.butler .couch.loaded {
   background-image: url("../../img/pages/main/couch.png");
 }
-.g-text.butler {
-  margin-left: -50px !important;
-}
-/*-------------------------------------- 480 --------------------------------------*/
+/* 
+@media screen and (max-width: 1024px)
+{
+	section.g-sprites.butler .room { .background-size(550px auto); }
+} */
+/*-------------------------------------- 1400 --------------------------------------*/
+/*-------------------------------------- 1920 --------------------------------------*/
 @media screen and (min-width: 1920px) {
+  section.g-sprites.butler .room {
+    -webkit-background-size: 850px auto;
+    -moz-background-size: 850px auto;
+    -o-background-size: 850px auto;
+    background-size: 850px auto;
+  }
   section.g-sprites.butler .man {
     position: absolute;
-    width: 312px;
-    height: 1050px;
+    width: 291.2px;
+    height: 980px;
     left: 15%;
     bottom: 11px;
     background-position: center center;
@@ -112,8 +126,8 @@ section.g-sprites.butler .couch.loaded {
   }
   section.g-sprites.butler .hang {
     position: absolute;
-    width: 345px;
-    height: 750px;
+    width: 322px;
+    height: 700px;
     left: 75%;
     bottom: 50px;
     background-position: center center;
@@ -128,8 +142,8 @@ section.g-sprites.butler .couch.loaded {
   }
   section.g-sprites.butler .couch {
     position: absolute;
-    width: 525px;
-    height: 300px;
+    width: 490px;
+    height: 322px;
     left: 28%;
     bottom: 110px;
     background-position: center center;
@@ -143,14 +157,75 @@ section.g-sprites.butler .couch.loaded {
     background-image: url("../../img/pages/main/couch.png");
   }
   .g-text.butler {
-    margin-left: -75px !important;
+    margin-left: -70px !important;
   }
 }
-/*-------------------------------------- 768 --------------------------------------*/
-/*-------------------------------------- 1024 -------------------------------------*/
+/*-------------------------------------- 700 --------------------------------------*/
+@media screen and (max-height: 700px) {
+  section.g-sprites.butler .room {
+    -webkit-background-size: 425px auto;
+    -moz-background-size: 425px auto;
+    -o-background-size: 425px auto;
+    background-size: 425px auto;
+  }
+  section.g-sprites.butler .man {
+    position: absolute;
+    width: 156px;
+    height: 525px;
+    left: 15%;
+    bottom: 11px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+    background-position: left bottom;
+  }
+  section.g-sprites.butler .man.loaded {
+    background-image: url("../../img/pages/main/man.png");
+  }
+  section.g-sprites.butler .hang {
+    position: absolute;
+    width: 172.5px;
+    height: 375px;
+    left: 75%;
+    bottom: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+  section.g-sprites.butler .hang.loaded {
+    background-image: url("../../img/pages/main/hang.png");
+  }
+  section.g-sprites.butler .couch {
+    position: absolute;
+    width: 262.5px;
+    height: 172.5px;
+    left: 28%;
+    bottom: 110px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+  section.g-sprites.butler .couch.loaded {
+    background-image: url("../../img/pages/main/couch.png");
+  }
+}
 /* Дворецкий (конец) */
 /* Дизайнер (начало) */
 /*-------------------------------------- 320 --------------------------------------*/
+section.g-sprites.designer .sprite {
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  -moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
 section.g-sprites.designer .floor {
   position: absolute;
   width: 100%;
@@ -179,15 +254,15 @@ section.g-sprites.designer .room {
   bottom: 187px;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: 75% auto;
-  -moz-background-size: 75% auto;
-  -o-background-size: 75% auto;
-  background-size: 75% auto;
+  -webkit-background-size: 71.5% auto;
+  -moz-background-size: 71.5% auto;
+  -o-background-size: 71.5% auto;
+  background-size: 71.5% auto;
   background-position: center bottom;
   background-color: #eff1e7;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  -webkit-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  -moz-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
 }
 section.g-sprites.designer .room.loaded {
   background-image: url("../../img/pages/main/room_designer.png");
@@ -228,9 +303,9 @@ section.g-sprites.designer .lamp {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
 }
 section.g-sprites.designer .lamp.loaded {
   background-image: url("../../img/pages/main/lamp.png");
@@ -247,9 +322,9 @@ section.g-sprites.designer .armchair {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
 }
 section.g-sprites.designer .armchair.loaded {
   background-image: url("../../img/pages/main/armchair.png");
@@ -266,22 +341,34 @@ section.g-sprites.designer .letter {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
 }
 section.g-sprites.designer .letter.loaded {
   background-image: url("../../img/pages/main/letter.png");
 }
-.g-text.designer {
-  margin-left: -150px !important;
+@media screen and (max-width: 1024px) {
+  section.g-sprites.designer .room {
+    -webkit-background-size: 90% auto;
+    -moz-background-size: 90% auto;
+    -o-background-size: 90% auto;
+    background-size: 90% auto;
+  }
 }
-/*-------------------------------------- 480 --------------------------------------*/
+/*-------------------------------------- 1400 --------------------------------------*/
+/*-------------------------------------- 1920 --------------------------------------*/
 @media screen and (min-width: 1920px) {
+  section.g-sprites.designer .room {
+    -webkit-background-size: 1500px auto;
+    -moz-background-size: 1500px auto;
+    -o-background-size: 1500px auto;
+    background-size: 1500px auto;
+  }
   section.g-sprites.designer .man {
     position: absolute;
-    width: 274.5px;
-    height: 1050px;
+    width: 256.2px;
+    height: 980px;
     left: 15%;
     bottom: 11px;
     background-position: center center;
@@ -297,8 +384,8 @@ section.g-sprites.designer .letter.loaded {
   }
   section.g-sprites.designer .lamp {
     position: absolute;
-    width: 181.5px;
-    height: 619.5px;
+    width: 169.4px;
+    height: 578.2px;
     left: 75%;
     bottom: 100px;
     background-position: center center;
@@ -313,8 +400,8 @@ section.g-sprites.designer .letter.loaded {
   }
   section.g-sprites.designer .armchair {
     position: absolute;
-    width: 390px;
-    height: 450px;
+    width: 364px;
+    height: 420px;
     left: 72%;
     bottom: 30px;
     background-position: center center;
@@ -329,10 +416,10 @@ section.g-sprites.designer .letter.loaded {
   }
   section.g-sprites.designer .letter {
     position: absolute;
-    width: 217.5px;
-    height: 294px;
+    width: 203px;
+    height: 274.4px;
     left: 5%;
-    bottom: 130px;
+    bottom: 80px;
     background-position: center center;
     background-repeat: no-repeat;
     -webkit-background-size: 100% auto;
@@ -344,11 +431,82 @@ section.g-sprites.designer .letter.loaded {
     background-image: url("../../img/pages/main/letter.png");
   }
 }
-/*-------------------------------------- 768 --------------------------------------*/
-/*-------------------------------------- 1024 -------------------------------------*/
+/*-------------------------------------- 700 --------------------------------------*/
+@media screen and (max-height: 700px) {
+  section.g-sprites.designer .man {
+    position: absolute;
+    width: 137.25px;
+    height: 525px;
+    left: 15%;
+    bottom: 11px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+    background-position: left bottom;
+  }
+  section.g-sprites.designer .man.loaded {
+    background-image: url("../../img/pages/main/man_designer.png");
+  }
+  section.g-sprites.designer .lamp {
+    position: absolute;
+    width: 90.75px;
+    height: 309.75px;
+    left: 75%;
+    bottom: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+  section.g-sprites.designer .lamp.loaded {
+    background-image: url("../../img/pages/main/lamp.png");
+  }
+  section.g-sprites.designer .armchair {
+    position: absolute;
+    width: 195px;
+    height: 225px;
+    left: 72%;
+    bottom: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+  section.g-sprites.designer .armchair.loaded {
+    background-image: url("../../img/pages/main/armchair.png");
+  }
+  section.g-sprites.designer .letter {
+    position: absolute;
+    width: 108.75px;
+    height: 147px;
+    left: 5%;
+    bottom: 80px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+  section.g-sprites.designer .letter.loaded {
+    background-image: url("../../img/pages/main/letter.png");
+  }
+}
 /* Дизайнер (конец) */
 /* DJ (начало) */
 /*-------------------------------------- 320 --------------------------------------*/
+section.g-sprites.dj .sprite {
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  -moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
 section.g-sprites.dj .floor {
   position: absolute;
   width: 100%;
@@ -377,15 +535,15 @@ section.g-sprites.dj .room {
   bottom: 187px;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: 95% auto;
-  -moz-background-size: 95% auto;
-  -o-background-size: 95% auto;
-  background-size: 95% auto;
+  -webkit-background-size: 93.5% auto;
+  -moz-background-size: 93.5% auto;
+  -o-background-size: 93.5% auto;
+  background-size: 93.5% auto;
   background-position: center bottom;
   background-color: #eff1e7;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
 }
 section.g-sprites.dj .room.loaded {
   background-image: url("../../img/pages/main/room_dj.png");
@@ -423,9 +581,9 @@ section.g-sprites.dj .speaker {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s;
 }
 section.g-sprites.dj .speaker.loaded {
   background-image: url("../../img/pages/main/speaker.png");
@@ -442,9 +600,9 @@ section.g-sprites.dj .table {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
 }
 section.g-sprites.dj .table.loaded {
   background-image: url("../../img/pages/main/table.png");
@@ -461,22 +619,34 @@ section.g-sprites.dj .bowl {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
 }
 section.g-sprites.dj .bowl.loaded {
   background-image: url("../../img/pages/main/bowl.png");
 }
-.g-text.dj {
-  margin-left: -150px !important;
+@media screen and (max-width: 1024px) {
+  section.g-sprites.dj .room {
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
 }
-/*-------------------------------------- 480 --------------------------------------*/
+/*-------------------------------------- 1400 --------------------------------------*/
+/*-------------------------------------- 1920 --------------------------------------*/
 @media screen and (min-width: 1920px) {
+  section.g-sprites.dj .room {
+    -webkit-background-size: 2000px auto;
+    -moz-background-size: 2000px auto;
+    -o-background-size: 2000px auto;
+    background-size: 2000px auto;
+  }
   section.g-sprites.dj .man {
     position: absolute;
-    width: 285px;
-    height: 1050px;
+    width: 266px;
+    height: 980px;
     left: 15%;
     bottom: 11px;
     background-position: center center;
@@ -492,8 +662,8 @@ section.g-sprites.dj .bowl.loaded {
   }
   section.g-sprites.dj .speaker {
     position: absolute;
-    width: 195px;
-    height: 825px;
+    width: 182px;
+    height: 770px;
     left: 75%;
     bottom: 55px;
     background-position: center center;
@@ -508,8 +678,8 @@ section.g-sprites.dj .bowl.loaded {
   }
   section.g-sprites.dj .table {
     position: absolute;
-    width: 450px;
-    height: 240px;
+    width: 420px;
+    height: 224px;
     left: 40%;
     bottom: 80px;
     background-position: center center;
@@ -524,8 +694,8 @@ section.g-sprites.dj .bowl.loaded {
   }
   section.g-sprites.dj .bowl {
     position: absolute;
-    width: 420px;
-    height: 600px;
+    width: 392px;
+    height: 560px;
     left: 24%;
     bottom: 160px;
     background-position: center center;
@@ -539,10 +709,87 @@ section.g-sprites.dj .bowl.loaded {
     background-image: url("../../img/pages/main/bowl.png");
   }
 }
-/*-------------------------------------- 768 --------------------------------------*/
-/*-------------------------------------- 1024 -------------------------------------*/
+/*-------------------------------------- 700 --------------------------------------*/
+@media screen and (max-height: 700px) {
+  section.g-sprites.dj .room {
+    -webkit-background-size: 900px auto;
+    -moz-background-size: 900px auto;
+    -o-background-size: 900px auto;
+    background-size: 900px auto;
+  }
+  section.g-sprites.dj .man {
+    position: absolute;
+    width: 142.5px;
+    height: 525px;
+    left: 15%;
+    bottom: 11px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+    background-position: left bottom;
+  }
+  section.g-sprites.dj .man.loaded {
+    background-image: url("../../img/pages/main/man_dj.png");
+  }
+  section.g-sprites.dj .speaker {
+    position: absolute;
+    width: 97.5px;
+    height: 412.5px;
+    left: 75%;
+    bottom: 55px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+  section.g-sprites.dj .speaker.loaded {
+    background-image: url("../../img/pages/main/speaker.png");
+  }
+  section.g-sprites.dj .table {
+    position: absolute;
+    width: 225px;
+    height: 120px;
+    left: 40%;
+    bottom: 80px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+  section.g-sprites.dj .table.loaded {
+    background-image: url("../../img/pages/main/table.png");
+  }
+  section.g-sprites.dj .bowl {
+    position: absolute;
+    width: 210px;
+    height: 300px;
+    left: 24%;
+    bottom: 160px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+  section.g-sprites.dj .bowl.loaded {
+    background-image: url("../../img/pages/main/bowl.png");
+  }
+}
 /* DJ (конец) */
 /* Экономка (начало) */
+section.g-sprites.housekeeper .sprite {
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  -moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
 section.g-sprites.housekeeper .floor {
   position: absolute;
   width: 100%;
@@ -571,15 +818,15 @@ section.g-sprites.housekeeper .room {
   bottom: 187px;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: 65% auto;
-  -moz-background-size: 65% auto;
-  -o-background-size: 65% auto;
-  background-size: 65% auto;
+  -webkit-background-size: 60.5% auto;
+  -moz-background-size: 60.5% auto;
+  -o-background-size: 60.5% auto;
+  background-size: 60.5% auto;
   background-position: center bottom;
   background-color: #eff1e7;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  -webkit-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  -moz-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
 }
 section.g-sprites.housekeeper .room.loaded {
   background-image: url("../../img/pages/main/room_housekeeper.png");
@@ -610,8 +857,8 @@ section.g-sprites.housekeeper .man.loaded {
 }
 section.g-sprites.housekeeper .stair {
   position: absolute;
-  width: 260px;
-  height: 300px;
+  width: 220px;
+  height: 260px;
   left: 66%;
   bottom: 30px;
   background-position: center center;
@@ -620,19 +867,34 @@ section.g-sprites.housekeeper .stair {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
 }
 section.g-sprites.housekeeper .stair.loaded {
   background-image: url("../../img/pages/main/stair.png");
 }
+@media screen and (max-width: 1024px) {
+  section.g-sprites.housekeeper .room {
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+}
+/*-------------------------------------- 1400 --------------------------------------*/
 /*-------------------------------------- 1920 --------------------------------------*/
 @media screen and (min-width: 1920px) {
+  section.g-sprites.housekeeper .room {
+    -webkit-background-size: 1400px auto;
+    -moz-background-size: 1400px auto;
+    -o-background-size: 1400px auto;
+    background-size: 1400px auto;
+  }
   section.g-sprites.housekeeper .man {
     position: absolute;
-    width: 270px;
-    height: 1050px;
+    width: 252px;
+    height: 980px;
     left: 15%;
     bottom: 11px;
     background-position: center center;
@@ -642,21 +904,14 @@ section.g-sprites.housekeeper .stair.loaded {
     -o-background-size: 100% auto;
     background-size: 100% auto;
     background-position: left bottom;
-    -webkit-transition: 1s all cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
-    -moz-transition: 1s all cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
-    transition: 1s all cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
-    -webkit-transform-origin: center center;
-    -moz-transform-origin: center center;
-    -ms-transform-origin: center center;
-    transform-origin: center center;
   }
   section.g-sprites.housekeeper .man.loaded {
     background-image: url("../../img/pages/main/man_housekeeper.png");
   }
   section.g-sprites.housekeeper .stair {
     position: absolute;
-    width: 390px;
-    height: 450px;
+    width: 308px;
+    height: 364px;
     left: 66%;
     bottom: 30px;
     background-position: center center;
@@ -665,10 +920,48 @@ section.g-sprites.housekeeper .stair.loaded {
     -moz-background-size: 100% auto;
     -o-background-size: 100% auto;
     background-size: 100% auto;
-    -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-    -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-    transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-    /* z-index: 1; */
+  }
+  section.g-sprites.housekeeper .stair.loaded {
+    background-image: url("../../img/pages/main/stair.png");
+  }
+}
+/*-------------------------------------- 700 --------------------------------------*/
+@media screen and (max-height: 700px) {
+  section.g-sprites.housekeeper .room {
+    -webkit-background-size: 700px auto;
+    -moz-background-size: 700px auto;
+    -o-background-size: 700px auto;
+    background-size: 700px auto;
+  }
+  section.g-sprites.housekeeper .man {
+    position: absolute;
+    width: 135px;
+    height: 525px;
+    left: 15%;
+    bottom: 11px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+    background-position: left bottom;
+  }
+  section.g-sprites.housekeeper .man.loaded {
+    background-image: url("../../img/pages/main/man_housekeeper.png");
+  }
+  section.g-sprites.housekeeper .stair {
+    position: absolute;
+    width: 165px;
+    height: 195px;
+    left: 66%;
+    bottom: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
   }
   section.g-sprites.housekeeper .stair.loaded {
     background-image: url("../../img/pages/main/stair.png");
@@ -676,10 +969,15 @@ section.g-sprites.housekeeper .stair.loaded {
 }
 /* Экономка (конец) */
 /* Пожарный (начало) */
+section.g-sprites.fireman .sprite {
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  -moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
 section.g-sprites.fireman .floor {
   position: absolute;
   width: 100%;
-  height: 187px;
+  height: 159px;
   left: 0;
   bottom: 0;
   background-position: center center;
@@ -701,21 +999,20 @@ section.g-sprites.fireman .room {
   width: 100%;
   height: 100%;
   left: 0;
-  bottom: 187px;
+  bottom: 155px;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: 75% auto;
-  -moz-background-size: 75% auto;
-  -o-background-size: 75% auto;
-  background-size: 75% auto;
+  -webkit-background-size: 71.5% auto;
+  -moz-background-size: 71.5% auto;
+  -o-background-size: 71.5% auto;
+  background-size: 71.5% auto;
   background-position: center bottom;
-  background-color: #eff1e7;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  -webkit-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  -moz-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
 }
 section.g-sprites.fireman .room.loaded {
-  background-image: url("../../img/pages/main/room_fireman.png");
+  background-image: url("../../img/pages/main/room_fireman.png?v3");
 }
 section.g-sprites.fireman .man {
   position: absolute;
@@ -753,22 +1050,35 @@ section.g-sprites.fireman .ironing {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
 }
 section.g-sprites.fireman .ironing.loaded {
   background-image: url("../../img/pages/main/ironing.png");
 }
-.g-text.fireman {
-  margin-left: -150px !important;
+@media screen and (max-width: 1024px) {
+  section.g-sprites.fireman .room {
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
 }
+/*-------------------------------------- 1400 --------------------------------------*/
 /*-------------------------------------- 1920 --------------------------------------*/
 @media screen and (min-width: 1920px) {
+  section.g-sprites.fireman .room {
+    -webkit-background-size: 1900px auto;
+    -moz-background-size: 1900px auto;
+    -o-background-size: 1900px auto;
+    background-size: 1900px auto;
+    bottom: 123px;
+  }
   section.g-sprites.fireman .man {
     position: absolute;
-    width: 390px;
-    height: 1050px;
+    width: 364px;
+    height: 980px;
     left: 15%;
     bottom: 11px;
     background-position: center center;
@@ -778,21 +1088,14 @@ section.g-sprites.fireman .ironing.loaded {
     -o-background-size: 100% auto;
     background-size: 100% auto;
     background-position: left bottom;
-    -webkit-transition: 1s all cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
-    -moz-transition: 1s all cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
-    transition: 1s all cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
-    -webkit-transform-origin: center center;
-    -moz-transform-origin: center center;
-    -ms-transform-origin: center center;
-    transform-origin: center center;
   }
   section.g-sprites.fireman .man.loaded {
     background-image: url("../../img/pages/main/man_fireman.png");
   }
   section.g-sprites.fireman .ironing {
     position: absolute;
-    width: 630px;
-    height: 600px;
+    width: 588px;
+    height: 560px;
     left: 55%;
     bottom: 30px;
     background-position: center center;
@@ -801,9 +1104,49 @@ section.g-sprites.fireman .ironing.loaded {
     -moz-background-size: 100% auto;
     -o-background-size: 100% auto;
     background-size: 100% auto;
-    -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-    -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-    transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  }
+  section.g-sprites.fireman .ironing.loaded {
+    background-image: url("../../img/pages/main/ironing.png");
+  }
+}
+/*-------------------------------------- 700 --------------------------------------*/
+@media screen and (max-height: 700px) {
+  section.g-sprites.fireman .room {
+    -webkit-background-size: 800px auto;
+    -moz-background-size: 800px auto;
+    -o-background-size: 800px auto;
+    background-size: 800px auto;
+    bottom: 159px;
+  }
+  section.g-sprites.fireman .man {
+    position: absolute;
+    width: 195px;
+    height: 525px;
+    left: 15%;
+    bottom: 11px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+    background-position: left bottom;
+  }
+  section.g-sprites.fireman .man.loaded {
+    background-image: url("../../img/pages/main/man_fireman.png");
+  }
+  section.g-sprites.fireman .ironing {
+    position: absolute;
+    width: 315px;
+    height: 300px;
+    left: 55%;
+    bottom: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
   }
   section.g-sprites.fireman .ironing.loaded {
     background-image: url("../../img/pages/main/ironing.png");
@@ -811,6 +1154,11 @@ section.g-sprites.fireman .ironing.loaded {
 }
 /* Пожарный (конец) */
 /* Охранник (начало) */
+section.g-sprites.security .sprite {
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  -moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
 section.g-sprites.security .pavement {
   position: absolute;
   width: 100%;
@@ -843,9 +1191,9 @@ section.g-sprites.security .room {
   background-size: 100% auto;
   background-position: center bottom;
   background-color: #eff1e7;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  -webkit-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  -moz-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+  transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
 }
 section.g-sprites.security .room.loaded {
   background-image: url("../../img/pages/main/room_security.png");
@@ -886,22 +1234,25 @@ section.g-sprites.security .dog {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-  -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-  transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  -webkit-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  -moz-transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  transition: 1s all cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
 }
 section.g-sprites.security .dog.loaded {
   background-image: url("../../img/pages/main/dog.png");
 }
-.g-text.security {
-  margin-left: -150px !important;
+/* .g-text.security
+{
+	margin-left: -150px !important;
 }
+ */
+/*-------------------------------------- 1400 --------------------------------------*/
 /*-------------------------------------- 1920 --------------------------------------*/
 @media screen and (min-width: 1920px) {
   section.g-sprites.security .man {
     position: absolute;
-    width: 330px;
-    height: 1050px;
+    width: 308px;
+    height: 980px;
     left: 15%;
     bottom: 11px;
     background-position: center center;
@@ -911,21 +1262,14 @@ section.g-sprites.security .dog.loaded {
     -o-background-size: 100% auto;
     background-size: 100% auto;
     background-position: left bottom;
-    -webkit-transition: 1s all cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
-    -moz-transition: 1s all cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
-    transition: 1s all cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
-    -webkit-transform-origin: center center;
-    -moz-transform-origin: center center;
-    -ms-transform-origin: center center;
-    transform-origin: center center;
   }
   section.g-sprites.security .man.loaded {
     background-image: url("../../img/pages/main/man_security.png");
   }
   section.g-sprites.security .dog {
     position: absolute;
-    width: 360px;
-    height: 450px;
+    width: 336px;
+    height: 420px;
     left: 56%;
     bottom: 0;
     background-position: center center;
@@ -934,9 +1278,42 @@ section.g-sprites.security .dog.loaded {
     -moz-background-size: 100% auto;
     -o-background-size: 100% auto;
     background-size: 100% auto;
-    -webkit-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-    -moz-transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
-    transition: 1s left cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+  }
+  section.g-sprites.security .dog.loaded {
+    background-image: url("../../img/pages/main/dog.png");
+  }
+}
+/*-------------------------------------- 700 --------------------------------------*/
+@media screen and (max-height: 700px) {
+  section.g-sprites.security .man {
+    position: absolute;
+    width: 165px;
+    height: 525px;
+    left: 15%;
+    bottom: 11px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+    background-position: left bottom;
+  }
+  section.g-sprites.security .man.loaded {
+    background-image: url("../../img/pages/main/man_security.png");
+  }
+  section.g-sprites.security .dog {
+    position: absolute;
+    width: 180px;
+    height: 225px;
+    left: 56%;
+    bottom: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
   }
   section.g-sprites.security .dog.loaded {
     background-image: url("../../img/pages/main/dog.png");
@@ -1024,6 +1401,9 @@ section.g-sprites.advantages ul.tab-buttons > li.current {
   border: 1px solid #abf8fa;
   z-index: 1;
 }
+section.g-sprites.advantages ul.tab-contents {
+  padding-bottom: 70px;
+}
 section.g-sprites.advantages ul.tab-contents > li {
   display: none;
 }
@@ -1043,7 +1423,7 @@ section.g-sprites.advantages .economy ul.icons > li:before {
   width: 100px;
   height: 100px;
   margin: auto;
-  background-image: url(../../img/icon/advantages_economy.png);
+  background-image: url(../../img/icon/advantages_economy.png?v2);
   background-repeat: no-repeat;
   -webkit-background-size: 400%;
   -moz-background-size: 400%;
@@ -1076,7 +1456,7 @@ section.g-sprites.advantages .secure ul.icons > li:before {
   height: 75px;
   margin: auto;
   margin-bottom: 10px;
-  background-image: url(../../img/icon/advantages_secure.png);
+  background-image: url(../../img/icon/advantages_secure.png?v3);
   background-repeat: no-repeat;
   -webkit-background-size: 400%;
   -moz-background-size: 400%;
@@ -1107,6 +1487,15 @@ section.g-sprites.advantages .secure ul.icons > li.icon-secure-7:before {
 section.g-sprites.advantages .secure ul.icons > li.icon-secure-8:before {
   background-position: -225px -75px;
 }
+section.g-sprites.advantages .secure ul.icons > li.icon-secure-9:before {
+  background-position: 0px -150px;
+}
+section.g-sprites.advantages .secure ul.icons > li.icon-secure-10:before {
+  background-position: -75px -150px;
+}
+section.g-sprites.advantages .secure ul.icons > li.icon-secure-11:before {
+  background-position: -150px -150px;
+}
 section.g-sprites.advantages .comfort ul.icons > li {
   display: inline-block;
   vertical-align: top;
@@ -1121,7 +1510,7 @@ section.g-sprites.advantages .comfort ul.icons > li:before {
   height: 120px;
   margin: auto;
   margin-bottom: -10px;
-  background-image: url(../../img/icon/advantages_comfort.png);
+  background-image: url(../../img/icon/advantages_comfort.png?v3);
   background-repeat: no-repeat;
   -webkit-background-size: 500%;
   -moz-background-size: 500%;
@@ -1136,6 +1525,12 @@ section.g-sprites.advantages .comfort ul.icons > li.icon-comfort-2:before {
 }
 section.g-sprites.advantages .comfort ul.icons > li.icon-comfort-3:before {
   background-position: -240px 0px;
+  background-image: url(../../img/icon/advantages_comfort_car.png) !important;
+  background-position: center center !important;
+  -webkit-background-size: 100% auto !important;
+  -moz-background-size: 100% auto !important;
+  -o-background-size: 100% auto !important;
+  background-size: 100% auto !important;
 }
 section.g-sprites.advantages .comfort ul.icons > li.icon-comfort-4:before {
   background-position: -360px 0px;
@@ -1172,8 +1567,68 @@ section.g-sprites.advantages .center {
   max-width: 700px;
   margin: auto;
   font-size: 16px;
+  font-weight: bold;
 }
-/*-------------------------------------- 1920 --------------------------------------*/
+/*-------------------------------------- до 600 по высоте --------------------------------------*/
+@media screen and (max-height: 768px) {
+  section.g-sprites.advantages .wrapper {
+    height: 500px;
+    margin-top: -250px;
+    overflow-y: auto;
+  }
+}
+/*-------------------------------------- до 768 --------------------------------------*/
+@media screen and (max-width: 768px) {
+  section.g-sprites.advantages .center {
+    max-width: 550px;
+  }
+}
+/*-------------------------------------- до 1024 --------------------------------------*/
+@media screen and (max-width: 1024px) {
+  section.g-sprites.advantages .sprite.text {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  section.g-sprites.advantages .wrapper {
+    padding-top: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 768px;
+    height: 900px;
+    margin-left: -384px;
+    margin-top: -450px;
+    top: 0;
+    margin-top: 0;
+  }
+  section.g-sprites.advantages .secure ul.icons > li {
+    width: 40%;
+    text-align: left;
+  }
+  section.g-sprites.advantages .secure ul.icons > li:before {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    top: -10px;
+  }
+  section.g-sprites.advantages .secure ul.icons > li > span {
+    text-align: left;
+  }
+  section.g-sprites.advantages .economy ul.icons > li {
+    width: 35%;
+  }
+  section.g-sprites.advantages .comfort ul.icons > li {
+    width: 11%;
+    font-size: 12px;
+  }
+  section.g-sprites.advantages .comfort ul.icons > li:before {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
 /* Преимущества (конец) */
 /* Примеры (начало) */
 section.g-sprites.examples {
@@ -1222,8 +1677,22 @@ section.g-sprites.examples .jcarousel-wrapper .jcarousel-list > li {
   float: left;
   width: 600px;
   height: auto;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: normal;
+}
+section.g-sprites.examples .jcarousel-wrapper .jcarousel-list > li .lightbox-wrapper {
+  white-space: nowrap;
+  font-size: 0;
+}
+section.g-sprites.examples .jcarousel-wrapper .jcarousel-list > li .lightbox-wrapper > * {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+  font-size: initial;
+}
+section.g-sprites.examples .jcarousel-wrapper .jcarousel-list > li .lighbox-preview {
+  width: 20%;
+  margin: 5px;
 }
 section.g-sprites.examples .jcarousel-wrapper .jcarousel-list > li .pad {
   padding: 30px 40px 40px;
@@ -1293,11 +1762,11 @@ section.g-sprites.examples .subtitle {
   left: 0;
   top: 300px;
   width: 50%;
-  padding: 30px 0;
+  padding: 40px 0 80px;
   text-align: center;
   font: bold 30px/40px 'pt_sans', Helvetica, Arial, sans-serif;
   letter-spacing: 1px;
-  background: url(../../img/bg/examples-subtitle.png) center center no-repeat;
+  background: url(../../img/bg/examples-subtitle2.png) center center no-repeat;
   -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
   -o-background-size: auto 100%;
@@ -1409,7 +1878,8 @@ section.g-sprites.examples .masonry-items > li:hover .image-hover {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 }
-section.g-sprites.examples .masonry-close-wrapper {
+section.g-sprites.examples .masonry-close-wrapper,
+section.g-sprites.examples .fotorama-close-wrapper {
   display: none;
   position: absolute;
   left: 0;
@@ -1418,7 +1888,10 @@ section.g-sprites.examples .masonry-close-wrapper {
   height: 0;
   text-align: center;
 }
-section.g-sprites.examples .masonry-close-wrapper .masonry-close {
+section.g-sprites.examples .masonry-close-wrapper .masonry-close,
+section.g-sprites.examples .fotorama-close-wrapper .masonry-close,
+section.g-sprites.examples .masonry-close-wrapper .fotorama-close,
+section.g-sprites.examples .fotorama-close-wrapper .fotorama-close {
   display: inline-block;
   vertical-align: middle;
   margin: auto;
@@ -1433,7 +1906,10 @@ section.g-sprites.examples .masonry-close-wrapper .masonry-close {
   -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
-section.g-sprites.examples .masonry-close-wrapper .masonry-close:after {
+section.g-sprites.examples .masonry-close-wrapper .masonry-close:after,
+section.g-sprites.examples .fotorama-close-wrapper .masonry-close:after,
+section.g-sprites.examples .masonry-close-wrapper .fotorama-close:after,
+section.g-sprites.examples .fotorama-close-wrapper .fotorama-close:after {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -1442,20 +1918,91 @@ section.g-sprites.examples .masonry-close-wrapper .masonry-close:after {
   background: url(../../img/icon/close.png);
   margin-left: 10px;
 }
-section.g-sprites.examples .masonry-open-wrapper {
+section.g-sprites.examples .masonry-open-wrapper,
+section.g-sprites.examples .fotorama-open-wrapper {
   position: absolute;
+  z-index: 1;
   left: 0;
   top: 650px;
   width: 50%;
   text-align: center;
 }
-section.g-sprites.examples .masonry-open-wrapper .masonry-open {
+section.g-sprites.examples .masonry-open-wrapper .masonry-open,
+section.g-sprites.examples .fotorama-open-wrapper .masonry-open,
+section.g-sprites.examples .masonry-open-wrapper .fotorama-open,
+section.g-sprites.examples .fotorama-open-wrapper .fotorama-open {
   font-family: 'pt_sans', Helvetica, Arial, sans-serif;
   font-style: normal;
   color: #fc5c65;
   font-size: 18px;
   line-height: normal;
-  border-bottom: 1px solid #fc5c65;
+  border-bottom: 1px dashed #fc5c65;
+}
+section.g-sprites.examples .fotorama-wrapper {
+  display: none;
+  background: #eff1e7;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+section.g-sprites.examples .fotorama-wrapper .fotorama__wrap {
+  margin: auto;
+}
+section.g-sprites.examples .fotorama-close-wrapper {
+  display: none;
+  left: auto;
+  right: 0;
+  width: 25%;
+}
+/*-------------------------------------- до 600 по высоте --------------------------------------*/
+@media screen and (max-height: 768px) {
+  section.g-sprites.examples .jcarousel-wrapper,
+  section.g-sprites.examples .jcarousel-wrapper .jcarousel-list > li {
+    width: 750px;
+  }
+  section.g-sprites.examples .wrapper {
+    height: 75%;
+    overflow-y: auto;
+  }
+  section.g-sprites.examples .subtitle {
+    top: 200px;
+  }
+  section.g-sprites.examples .masonry-open-wrapper,
+  section.g-sprites.examples .fotorama-open-wrapper {
+    top: 500px;
+  }
+}
+/*-------------------------------------- до 768 --------------------------------------*/
+@media screen and (max-width: 768px) {
+  section.g-sprites.examples .masonry-items > li .info {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  section.g-sprites.examples .masonry-items > li .info span {
+    padding: 10px;
+  }
+}
+/*-------------------------------------- до 1024 --------------------------------------*/
+@media screen and (max-width: 1024px) {
+  section.g-sprites.examples .jcarousel-wrapper {
+    left: auto;
+  }
+  section.g-sprites.examples .title {
+    display: none;
+  }
+  section.g-sprites.examples .subtitle {
+    display: none;
+  }
+  section.g-sprites.examples .masonry-open-wrapper {
+    top: 100px;
+    width: 100%;
+  }
+  section.g-sprites.examples .masonry-items > li .info {
+    font-size: 18px;
+    line-height: 18px;
+  }
 }
 /*-------------------------------------- 1920 --------------------------------------*/
 @media screen and (min-width: 1920px) {
@@ -1505,6 +2052,7 @@ section.g-sprites.partners ul.icons {
   padding-top: 30px;
   white-space: nowrap;
   font-size: 0;
+  white-space: normal;
 }
 section.g-sprites.partners ul.icons > * {
   display: inline-block;
@@ -1533,7 +2081,7 @@ section.g-sprites.partners ul.icons > li:before {
   width: 250px;
   height: 125px;
   margin: auto;
-  background-image: url(../../img/logo/partners_sprite.png);
+  background-image: url(../../img/logo/partners_sprite.png?v2);
   background-repeat: no-repeat;
 }
 section.g-sprites.partners ul.icons > li.partner-1:before {
@@ -1560,6 +2108,9 @@ section.g-sprites.partners ul.icons > li.partner-7:before {
 section.g-sprites.partners ul.icons > li.partner-8:before {
   background-position: -750px -125px;
 }
+section.g-sprites.partners ul.icons > li.partner-9:before {
+  background-position: 0px -250px;
+}
 section.g-sprites.partners .title {
   position: relative;
   font: bold 30px/40px 'pt_sans', Helvetica, Arial, sans-serif;
@@ -1574,7 +2125,36 @@ section.g-sprites.partners .title:after {
   height: 15px;
   border-bottom: 1px solid red;
 }
-/*-------------------------------------- 1920 --------------------------------------*/
+/*-------------------------------------- до 768 --------------------------------------*/
+@media screen and (max-width: 768px) {
+  section.g-sprites.partners ul.icons {
+    padding-bottom: 100px;
+  }
+}
+/*-------------------------------------- до 1024 --------------------------------------*/
+@media screen and (max-width: 1024px) {
+  section.g-sprites.partners .sprite.text {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  section.g-sprites.partners .wrapper {
+    width: 80%;
+    margin: 0 auto;
+    position: static;
+    padding-top: 120px;
+  }
+  section.g-sprites.partners .logo-wrapper {
+    width: auto;
+    height: auto;
+  }
+  section.g-sprites.partners ul.icons {
+    text-align: center;
+    white-space: normal;
+  }
+  section.g-sprites.partners ul.icons > li {
+    min-width: 250px;
+  }
+}
 /* Партнеры (конец) */
 /*-------------------------------------- 320 --------------------------------------*/
 section.g-sprites.main .house {
@@ -1591,9 +2171,9 @@ section.g-sprites.main .house {
   background-size: 1024px auto;
   background-position: left bottom;
   background-color: #eff1e7;
-  -webkit-transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-  -moz-transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
-  transition: 2s left cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  -webkit-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  -moz-transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
+  transition: 2s all cubic-bezier(0.39, 0.575, 0.565, 1) 0s;
 }
 section.g-sprites.main .house.loaded {
   background-image: url("../../img/pages/main/house.png");
@@ -1677,9 +2257,9 @@ section.g-sprites.main .tree {
   -moz-background-size: auto 100%;
   -o-background-size: auto 100%;
   background-size: auto 100%;
-  -webkit-transition: left 1s cubic-bezier(0.39, 0.575, 0.565, 1);
-  -moz-transition: left 1s cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: left 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-transition: all 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition: all 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 1s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 section.g-sprites.main .tree.loaded {
   background-image: url("../../img/pages/main/tree.png");
@@ -1696,16 +2276,23 @@ section.g-sprites.main .car {
   -moz-background-size: 100% auto;
   -o-background-size: 100% auto;
   background-size: 100% auto;
-  -webkit-transition: left 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
-  -moz-transition: left 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
-  transition: left 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+  -webkit-transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+  -moz-transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+  transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
   z-index: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 section.g-sprites.main .car.loaded {
   background-image: url("../../img/pages/main/car.png");
 }
 section.g-sprites.main .car.in {
-  left: 65%;
+  -webkit-transform: translate3d(-35%, 0, 0);
+  -moz-transform: translate3d(-35%, 0, 0);
+  -ms-transform: translate3d(-35%, 0, 0);
+  transform: translate3d(-35%, 0, 0);
 }
 section.g-sprites.main .car .front-wheel.in {
   -webkit-transform: rotate(-360deg);
@@ -1720,7 +2307,10 @@ section.g-sprites.main .car .rear-wheel.in {
   transform: rotate(-360deg);
 }
 section.g-sprites.main .car.out {
-  left: -100%;
+  -webkit-transform: translate3d(-3000px, 0, 0);
+  -moz-transform: translate3d(-3000px, 0, 0);
+  -ms-transform: translate3d(-3000px, 0, 0);
+  transform: translate3d(-3000px, 0, 0);
 }
 section.g-sprites.main .car .front-wheel.out {
   -webkit-transform: rotate(-1440deg);
@@ -1771,6 +2361,13 @@ section.g-sprites.main .car .rear-wheel {
 }
 section.g-sprites.main .car .rear-wheel.loaded {
   background-image: url("../../img/pages/main/wheel.png");
+}
+@media screen and (max-height: 800px) {
+  /* section.g-sprites.main .car
+	{
+		&.in { .transform(translate3d(90%,0,0)); }
+		&.out { .transform(translate3d(-120%,0,0)); }
+	} */
 }
 /*-------------------------------------- 480 --------------------------------------*/
 @media screen and (min-width: 1280px) {
@@ -1879,6 +2476,68 @@ section.g-sprites.main .car .rear-wheel.loaded {
     -webkit-transition: width 1.5s linear 0s;
     -moz-transition: width 1.5s linear 0s;
     transition: width 1.5s linear 0s;
+  }
+  section.g-sprites.main .car {
+    position: absolute;
+    width: 1200px;
+    height: 450px;
+    left: 100%;
+    bottom: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  section.g-sprites.main .car.loaded {
+    background-image: url("../../img/pages/main/car.png");
+  }
+  section.g-sprites.main .car .front-wheel {
+    position: absolute;
+    width: 123px;
+    height: 123px;
+    left: 174px;
+    bottom: 58.5px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    -webkit-transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+    -moz-transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+    transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+  }
+  section.g-sprites.main .car .front-wheel.loaded {
+    background-image: url("../../img/pages/main/wheel.png");
+  }
+  section.g-sprites.main .car .rear-wheel {
+    position: absolute;
+    width: 123px;
+    height: 123px;
+    left: 894px;
+    bottom: 58.5px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    -webkit-transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+    -moz-transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+    transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+  }
+  section.g-sprites.main .car .rear-wheel.loaded {
+    background-image: url("../../img/pages/main/wheel.png");
+  }
+  section.g-sprites.main .car.in {
+    -webkit-transform: translate3d(-52.5%, 0, 0);
+    -moz-transform: translate3d(-52.5%, 0, 0);
+    -ms-transform: translate3d(-52.5%, 0, 0);
+    transform: translate3d(-52.5%, 0, 0);
+  }
+  section.g-sprites.main .car.out {
+    -webkit-transform: translate3d(-4500px, 0, 0);
+    -moz-transform: translate3d(-4500px, 0, 0);
+    -ms-transform: translate3d(-4500px, 0, 0);
+    transform: translate3d(-4500px, 0, 0);
   }
 }
 @media screen and (min-width: 2400px) {

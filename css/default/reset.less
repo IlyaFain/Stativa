@@ -1,0 +1,52 @@
+/*
+	Reset
+*/
+
+body,
+ul, ol, li,
+h1, h2, h3, h4, h5,
+p
+{
+	padding: 0;
+	margin: 0;
+}
+
+li
+{
+	list-style-type: none;
+}
+
+noscript
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+    width: 100%;
+    line-height: 32px;
+    //padding: 5px 0;
+    z-index: 9999;
+    text-align: center;
+    background: #cc0000;
+    color: white;
+}
+
+// убираем крестик в IE10
+input::-ms-clear
+{
+	width: 0;
+	height: 0;
+}
+
+// убираем подсветку полей, чтобы не пересекалась с кастомной
+input,
+textarea
+{
+	box-shadow: none;
+	outline: none;
+}
+
+// убираем плэйсхолдеры, когда курсор в поле
+:focus:-moz-placeholder            { color: transparent; }
+:focus::-moz-placeholder           { color: transparent; }
+:focus:-ms-input-placeholder       { color: transparent; }
+:focus::-webkit-input-placeholder  { color: transparent; }

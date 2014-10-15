@@ -1,5 +1,6 @@
 @import "../default/normalize.min.css";
 @import "../../fonts/stylesheet.css";
+@import "lightbox.css";
 /*
 	Reset
 */
@@ -52,9 +53,18 @@ textarea {
   color: transparent;
 }
 /* общие стили (начало) */
+html,
+body {
+  width: 100%;
+  overflow: hidden;
+}
 body {
   font-family: Georgia, serif;
   background: #eff1e7;
+  overflow: hidden;
+}
+.content {
+  position: relative;
   overflow: hidden;
 }
 a {
@@ -81,6 +91,7 @@ header {
   height: 64px;
   line-height: 64px;
   background: white;
+  overflow: hidden;
   text-align: center;
   white-space: nowrap;
 }
@@ -101,18 +112,18 @@ header .logo img {
 }
 header ul.main-menu {
   display: inline-block;
-  vertical-align: baseline;
+  vertical-align: top;
   min-width: 700px;
 }
 header ul.main-menu > li {
   display: inline-block;
-  vertical-align: baseline;
+  vertical-align: middle;
   margin: 0;
 }
 header ul.main-menu > li > a {
   display: block;
   padding: 8px 16px;
-  font: 16px 'pt_sans', Helvetica, Arial, sans-serif;
+  font: 16px/16px 'pt_sans', Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #484848;
   -webkit-transition: background 0.3s linear;
@@ -123,7 +134,16 @@ header ul.main-menu > li.current a,
 header ul.main-menu > li:hover a {
   background: #f1f1f1;
 }
-header .callback {
+.callback-wrapper {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  margin: auto;
+  top: 64px;
+  width: 1000px;
+  margin-left: -500px;
+}
+.callback-wrapper .callback {
   position: absolute;
   left: 0;
   top: 100%;
@@ -131,30 +151,33 @@ header .callback {
   font: 16px/38px 'pt_sans', Helvetica, Arial, sans-serif;
   color: #282828;
 }
-header .callback .form {
+.callback-wrapper .callback .form {
   min-width: 229px;
   text-align: left;
 }
-header .callback .form .form-wrapper {
+.callback-wrapper .callback .form .form-wrapper {
   padding: 20px;
 }
-header .callback input {
+.callback-wrapper .callback input {
   border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
   height: 38px;
   line-height: 38px;
 }
-header .callback input.error {
+.callback-wrapper .callback input.error {
   outline: 1px solid rgba(255, 0, 0, 0.5);
 }
-header .callback .phone,
-header .callback .name {
+.callback-wrapper .callback .phone,
+.callback-wrapper .callback .name {
   display: block;
   background: #9afaff;
   margin-bottom: 10px;
   padding-left: 5px;
   color: #3e5758;
 }
-header .callback .submit {
+.callback-wrapper .callback .submit {
   background: #282828;
   color: white;
   font-size: 80%;
@@ -163,10 +186,10 @@ header .callback .submit {
   -moz-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
 }
-header .callback .submit:hover {
+.callback-wrapper .callback .submit:hover {
   background: #3c3c3c;
 }
-header .callback .toggle {
+.callback-wrapper .callback .toggle {
   width: auto;
   height: 38px;
   padding-left: 20px;
@@ -182,16 +205,74 @@ header .callback .toggle {
   -moz-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out;
 }
-header .callback .toggle.is-open {
+.callback-wrapper .callback .toggle.is-open {
   background-position: right bottom;
 }
-header .callback .toggle:hover {
+.callback-wrapper .callback .toggle:hover {
   background-color: #fafafa;
+}
+/*-------------------------------------- до 1024 --------------------------------------*/
+@media screen and (max-width: 1024px) {
+  header .wrapper {
+    width: 700px;
+    text-align: left;
+  }
+  header .logo {
+    margin-right: 5px;
+  }
+  header ul.main-menu {
+    min-width: unset;
+  }
+  header ul.main-menu > li {
+    width: 110px;
+    white-space: normal;
+    text-align: center;
+  }
+  header ul.main-menu > li > a {
+    padding: 8px;
+  }
+  .callback-wrapper {
+    width: 700px;
+    margin-left: -350px;
+  }
+  .callback-wrapper .callback .toggle {
+    font-size: 14px;
+  }
+}
+/*-------------------------------------- до 600 по высоте --------------------------------------*/
+@media screen and (max-height: 768px) {
+  section.g-text.main {
+    width: 640px;
+    margin-left: -320px !important;
+  }
+}
+/*-------------------------------------- до 768 --------------------------------------*/
+@media screen and (max-width: 767px) {
+  header .wrapper {
+    width: 600px;
+  }
+  header ul.main-menu > li {
+    width: 87px;
+  }
+  header ul.main-menu > li > a {
+    padding: 5px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .callback-wrapper {
+    margin-left: -285px;
+  }
 }
 /* ------------------------------------- Спрайты ------------------------------ */
 section.g-sprites {
   width: 100%;
   overflow: hidden;
+  /* 	.sprite
+{
+	-webkit-transition-timing-function: @cubic-in-out !important;
+	-moz-transition-timing-function: @cubic-in-out !important;
+	transition-timing-function: @cubic-in-out !important;
+} */
 }
 section.g-sprites .floor {
   height: 187px;
@@ -225,7 +306,7 @@ section.g-sprites .floor {
 }
 .slide-prev,
 .slide-next {
-  position: fixed;
+  position: absolute;
   top: 50%;
   margin-top: -50px;
   width: 100px;
@@ -233,6 +314,16 @@ section.g-sprites .floor {
   background-image: url(../../img/arrow/slides.png);
   cursor: pointer;
   z-index: 2;
+  -webkit-transition: transform 0.7s ease-out;
+  -moz-transition: transform 0.7s ease-out;
+  transition: transform 0.7s ease-out;
+}
+.slide-prev:active,
+.slide-next:active {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
 }
 .slide-prev {
   left: 50px;
@@ -249,6 +340,24 @@ section.g-sprites .floor {
   background-position: right bottom;
 }
 /* ------------------------------------- Текстовые блоки ------------------------------ */
+@media screen and (min-width: 1024px) {
+  section.g-text {
+    margin-left: -150px !important;
+  }
+  section.g-text.g-text-inside {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1023px) {
+  section.g-text {
+    margin-top: -370px !important;
+  }
+}
+@media screen and (max-height: 700px) {
+  section.g-text {
+    margin-top: -200px !important;
+  }
+}
 section.g-text {
   position: absolute;
   left: 50%;
@@ -258,7 +367,6 @@ section.g-text {
   height: 500px;
   margin-left: -250px;
   margin-top: -250px;
-  margin-left: -150px !important;
 }
 section.g-text .title {
   padding: 28px 33px;
@@ -296,9 +404,6 @@ section.g-text .next:after {
   -moz-background-size: 100% 100%;
   -o-background-size: 100% 100%;
   background-size: 100% 100%;
-}
-section.g-text.g-text-inside {
-  margin-left: 0;
 }
 section.g-text.g-text-inside .title,
 section.g-text.g-text-inside .description {
@@ -359,7 +464,7 @@ section.g-text.g-text-inside-with-bg {
   opacity: 1;
 }
 .slide-switcher-button {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   left: 50%;
   bottom: 20px;
@@ -404,7 +509,7 @@ section.g-text.g-text-inside-with-bg {
   width: 100%;
 }
 .slide-switcher .owl-item img {
-  min-width: 400px;
+  min-width: 379px;
 }
 .preloader {
   position: fixed;
@@ -466,13 +571,16 @@ section.g-text.g-text-inside-with-bg {
   transform-origin: 0 0 0;
 }
 /*-------------------------------------- 1080 --------------------------------------*/
-@media screen and (min-height: 1080px) {
+@media screen and (min-width: 1024px) and (min-height: 1080px) {
   header {
     height: 80px;
   }
   header .wrapper {
     width: 1400px;
     height: 80px;
+  }
+  .callback-wrapper {
+    top: 80px;
   }
 }
 @media screen and (min-width: 1920px) and (min-height: 1080px) {
@@ -482,6 +590,11 @@ section.g-text.g-text-inside-with-bg {
   header .wrapper {
     width: 1400px;
     height: 100px;
+  }
+  .callback-wrapper {
+    top: 100px;
+    width: 1400px;
+    margin-left: -700px;
   }
   header ul.main-menu > li > a {
     font: 20px 'pt_sans', Helvetica, Arial, sans-serif;
@@ -518,6 +631,4 @@ section.g-text.g-text-inside-with-bg {
     font: bold 30px 'pt_sans', Helvetica, Arial, sans-serif;
   }
 }
-/*-------------------------------------- 768 --------------------------------------*/
-/*-------------------------------------- 1024 -------------------------------------*/
 /* общие стили (конец) */
