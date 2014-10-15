@@ -112,18 +112,18 @@ $(function(){
                             $(element).find('.' + $current.data('lights')).fadeOut();
                             $(element).find('.rooms-condition [data-name="' + $current.data('name') + '"] span').html('выключен');
                         }
-                    }, 3000);
+                    }, 2000);
                 }
 
                 // Security show
                 if($(element).hasClass('security-frame')) {
-                    $(element).find('.password span:hidden:first').fadeIn('slow', function(){
-                        $(element).find('.password span:hidden:first').fadeIn('slow', function(){
-                            $(element).find('.password span:hidden:first').fadeIn('slow', function(){
-                                $(element).find('.password span:hidden:first').fadeIn('slow', function(){
-                                    $(element).find('.password span:hidden:first').fadeIn('slow', function(){
-                                        $(element).find('.password span:hidden:first').fadeIn('slow', function(){
-                                            $(element).find('.alert').fadeIn('slow', function(){});
+                    $(element).find('.password span:hidden:first').fadeIn(400, function(){
+                        $(element).find('.password span:hidden:first').fadeIn(400, function(){
+                            $(element).find('.password span:hidden:first').fadeIn(400, function(){
+                                $(element).find('.password span:hidden:first').fadeIn(400, function(){
+                                    $(element).find('.password span:hidden:first').fadeIn(400, function(){
+                                        $(element).find('.password span:hidden:first').fadeIn(400, function(){
+                                            $(element).find('.alert').fadeIn(400, function(){});
                                         });
                                     });
                                 });
