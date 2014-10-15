@@ -14,7 +14,7 @@ $(function()
 			.not('.current')
 			.children('.sprite').not('.road, .floor, .pavement, .man')
 			.addClass('g-deny-transition')
-			.css("left", "100%")
+			.css("transform", "translate(2222px, 0)")
 			.removeClass('g-deny-transition');
 
 		$('.man').hide().addClass('g-rotated');
@@ -25,6 +25,8 @@ $(function()
 			event.preventDefault();
 			$('.slide-next').click();
 		});
+
+
 
 	})();
 
@@ -135,7 +137,11 @@ $(function()
 
 				(function StartAnimation()
 				{
-					if (getIndexById(document.location.hash) && getIndexById(document.location.hash) != 1) return;
+					if (getIndexById(document.location.hash) && getIndexById(document.location.hash) != 1)
+					{
+						$('.car').addClass('in');
+						return;
+					}
 
 					$('.car, .front-wheel, .rear-wheel').addClass('in');
 
@@ -198,7 +204,7 @@ $(function()
 		// ПЕРЕХОД НА СЛЕДУЮЩИЙ СЛАЙД -------------------------------------------------------------
 
 		var isNextButtonBlocked = false;
-		$('.slide-next').click(function(event)
+		$('.slide-next').on("click touchstart", function(event)
 		{
 			event.preventDefault();
 			if (isNextButtonBlocked) return;
@@ -229,7 +235,7 @@ $(function()
 		// ПЕРЕХОД НА ПРЕДЫДУЩИЙ СЛАЙД -------------------------------------------------------------
 
 		var isPrevButtonBlocked = false;
-		$('.slide-prev').click(function(event)
+		$('.slide-prev').on("click touchstart", function(event)
 		{
 			event.preventDefault();
 			if (isPrevButtonBlocked) return;
@@ -262,7 +268,7 @@ $(function()
 		// ПЕРЕХОД НА ПРОИЗВОЛЬНЫЙ СЛАЙД -------------------------------------------------------------
 
 		window.goToSlide = function(index) 
-		{console.log("goTo function", index);
+		{
 			if (isNextButtonBlocked || isPrevButtonBlocked) return;
 			isNextButtonBlocked = isPrevButtonBlocked = true;
 			setTimeout(function(){ isNextButtonBlocked = isPrevButtonBlocked = false; }, 2000);
@@ -284,13 +290,13 @@ $(function()
 			$current
 				.removeClass('current')
 				.children('.sprite').not('.road, .floor, .pavement, .man, .car')
-				.css("left", "-100%");
+				.css("transform", "translate(-2222px, 0)");
 			
 			$next
 				.addClass('current')
 				.children('.sprite').not('.road, .floor, .pavement, .man, .car')
 				.addClass('g-deny-transition')
-				.css("left", "100%")
+				.css("transform", "translate(2222px, 0)")
 				.removeClass('g-deny-transition');
 
 			$('.floor').css("background-position", "-=1000px");
@@ -345,8 +351,8 @@ $(function()
 	{
 		if (typeof($window) == "undefined") $window = $(window);
 
-		var minHeight = 500; // px
 		var minWidth = 768; // px
+		var minHeight = $window.width()/2.5; // px;
 		var $full = $('.js-fullscreen');
 		$full.css({"margin":0, "padding":0});
 		var onResize = (function()
@@ -436,7 +442,9 @@ $(function()
 
 				.on('jcarousel:create jcarousel:reload', function() {
 					var element = $(this),
-						width = element.innerWidth();
+						width = element.parent().innerWidth();
+
+						console.log(width)
 
 					// This shows 1 item at a time.
 					// Divide `width` to the number of items you want to display,
@@ -493,7 +501,7 @@ $(function()
 	{
 		var $buttons = $('.tab-buttons');
 
-		$('[data-tab]').click(function()
+		$('[data-tab]').on("click touchstart", function()
 		{
 			var id = $(this).attr("data-tab");
 
@@ -587,6 +595,29 @@ $(function()
 		});
 
 
+
+
+
+
+		$('#fotorama_close_wrapper').click(function(event)
+		{
+			event.preventDefault();
+			$('#fotorama').hide();
+			$('#fotorama_close_wrapper').hide();
+			$('#slide_arrows, .slide-switcher-button').show();
+		});
+
+
+		$('#fotorama_open').click(function(event)
+		{
+			event.preventDefault();
+			$('#fotorama').show();
+			$('#fotorama_close_wrapper').show();
+			$('#slide_arrows, .slide-switcher-button').hide();
+		});
+
+
+
 	})();
 
 
@@ -625,17 +656,17 @@ $(function()
 					url: $form.attr("action"),
 					data: $form.serialize(),
 					method: "POST",
-					success: function(data)
+					success: function()
 					{
 						$form.find('input[type=submit]').remove();
-						$('.form-wrapper').append(data);
+						$('.form-wrapper').append('Ваша заявка отправлена.');
 						$('#callback_form').delay(1000).slideToggle();
 
 					},
-                    error: function(data)
-                    {
-                        alert("Ошибка: " + data.status + ' ' + data.statusText);
-                    }
+					error: function()
+					{
+						alert("Не удалось отправить заявку, попробуйте еще раз.");
+					}
 				});
 
 				return false;
@@ -652,7 +683,6 @@ $(function()
 
 	var getIndexById = function(id)
 	{
-        console.log(id);
 		var slides =
 		{
 			'#main': 1,
