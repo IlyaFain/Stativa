@@ -1579,6 +1579,9 @@ section.g-sprites.advantages .center {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
+  section.g-sprites.advantages ul.tab-contents {
+    padding-bottom: 200px;
+  }
 }
 /*-------------------------------------- до 768 --------------------------------------*/
 @media screen and (max-width: 768px) {
