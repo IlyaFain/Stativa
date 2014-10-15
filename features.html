@@ -46,34 +46,37 @@
 
 <noscript><b>В вашем браузере выключен javascript!</b> Полная функциональность сайта может быть недоступна.</noscript>
 
-<header>
-    <div class="wrapper">
-        <a class="logo" href="#">
-            <img src="img/logo/stativa_header.png" alt="Stativa">
-        </a>
+    <header>
+        <div class="wrapper">
+            <a class="logo" href="#">
+                <img src="img/logo/stativa_header.png" alt="Stativa">
+            </a>
 
+            <ul class="main-menu">
+                <li><a href="#">Примеры реализации</a></li>
+                <li><a href="#">Установка и&nbsp;технологии</a></li>
+                <li class="current"><a href="#">Возможности</a></li>
+                <li><a href="#">Стоимость</a></li>
+                <li><a href="#">Контактная информация</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <div class="callback-wrapper">
         <div class="callback">
             <div class="form">
-                <form id="callback_form" class="form" method="POST">
+                <form id="callback_form" class="form js-validate" method="POST" action="callback.php">
                     <div class="form-wrapper">
-                        <input type="text" class="phone" name="phone" placeholder="телефон">
-                        <input type="text" class="name" name="name" placeholder="имя">
+                        <input type="text" class="phone" name="f_Phone" placeholder="телефон">
+                        <input type="text" class="name" name="f_Name" placeholder="имя">
                         <input type="submit" class="submit" value="Перезвоните мне">
                     </div>
                 </form>
             </div>
             <div id="callback_toggle" class="toggle">Обратный звонок</div>
         </div>
-
-        <ul class="main-menu">
-            <li><a href="#">Примеры реализации</a></li>
-            <li class="current"><a href="#">Установка и технологии</a></li>
-            <li><a href="#">Возможности</a></li>
-            <li><a href="#">Стоимость</a></li>
-            <li><a href="#">Контактная информация</a></li>
-        </ul>
     </div>
-</header>
 
 <div class="frame light-frame" data-hashtag="#light">
     <div class="content">
