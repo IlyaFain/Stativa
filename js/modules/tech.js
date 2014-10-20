@@ -48,30 +48,6 @@ $(function(){
 
     })();
 
-    // Init frames backgrounds
-    setTimeout(
-        function() {
-            var html = '';
-            $('.backgrounds-inner-wrapper .js-box').remove();
-            $('.page-frame').each(function(){
-                var $frame = $(this),
-                    $frameContent = $frame.find('.frame-content'),
-                    $frameQuote = $frame.find('.frame-quote');
-
-                html += '<div class="js-box frame-background" style="height: ' + $frameContent.outerHeight() + 'px;"></div>';
-                html += '<div class="js-box frame-quote-background" style="height: ' + $frameQuote.outerHeight() + 'px;"></div>';
-            });
-
-            $('.backgrounds-inner-wrapper').append(html);
-        }
-    , 100);
-
-    // Init scroll reaction (fill backgrounds and lines)
-    $(window).scroll(function(){
-        var scrollTop = $(window).scrollTop();
-        $('.backgrounds-inner-wrapper').css('top', '-' + scrollTop + 'px');
-    });
-
     // Catch page hash and show frame
     (function InitStartingFrame(){
         if(window.location.hash) {
