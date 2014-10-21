@@ -352,7 +352,8 @@ $(function()
 		if (typeof($window) == "undefined") $window = $(window);
 
 		var minWidth = 768; // px
-		var minHeight = $window.width()/2.5; // px;
+		var minHeight = Math.max(minWidth, $window.width())/2.5; // px;
+		console.log(minHeight);
 		var $full = $('.js-fullscreen');
 		$full.css({"margin":0, "padding":0});
 		var onResize = (function()

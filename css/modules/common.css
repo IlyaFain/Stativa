@@ -245,6 +245,10 @@ header ul.main-menu > li:hover a {
     width: 640px;
     margin-left: -320px !important;
   }
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }
 /*-------------------------------------- до 768 --------------------------------------*/
 @media screen and (max-width: 767px) {
