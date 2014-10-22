@@ -353,7 +353,7 @@ $(function()
 
 		var minWidth = 768; // px
 		var minHeight = Math.max(minWidth, $window.width())/2.5; // px;
-		console.log(minHeight);
+		minHeight = Math.max(minHeight, 550);
 		var $full = $('.js-fullscreen');
 		$full.css({"margin":0, "padding":0});
 		var onResize = (function()

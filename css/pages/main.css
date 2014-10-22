@@ -1456,7 +1456,7 @@ section.g-sprites.advantages .secure ul.icons > li:before {
   height: 75px;
   margin: auto;
   margin-bottom: 10px;
-  background-image: url(../../img/icon/advantages_secure.png?v3);
+  background-image: url(../../img/icon/advantages_secure.png?v4);
   background-repeat: no-repeat;
   -webkit-background-size: 400%;
   -moz-background-size: 400%;
@@ -1573,7 +1573,7 @@ section.g-sprites.advantages .center {
 @media screen and (max-height: 768px) {
   section.g-sprites.advantages .wrapper {
     height: 600px;
-    margin-top: -250px;
+    margin-top: -200px;
   }
   section.g-sprites.advantages .sprite.text {
     overflow-y: scroll;
@@ -2060,10 +2060,13 @@ section.g-sprites.partners .wrapper {
   height: 400px;
   margin-left: -500px;
   margin-top: -200px;
+ /* overflow-x: hidden;
+  overflow-y: auto;*/
 }
 section.g-sprites.partners .logo-wrapper {
   width: 1000px;
-  height: 250px;
+  min-height: 250px;
+  padding: 0 0 50px;
 }
 section.g-sprites.partners ul.icons {
   padding-top: 30px;
@@ -2142,6 +2145,14 @@ section.g-sprites.partners .title:after {
   height: 15px;
   border-bottom: 1px solid red;
 }
+
+@media screen and (max-height: 600px) {
+  section.g-sprites.partners .wrapper {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
 /*-------------------------------------- до 768 --------------------------------------*/
 @media screen and (max-width: 768px) {
   section.g-sprites.partners ul.icons {
