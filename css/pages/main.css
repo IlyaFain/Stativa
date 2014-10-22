@@ -2009,8 +2009,10 @@ section.g-sprites.examples .fotorama-close-wrapper {
   section.g-sprites.examples .subtitle {
     display: none;
   }
-  section.g-sprites.examples .masonry-open-wrapper {
-    top: 100px;
+  section.g-sprites.examples .masonry-open-wrapper,
+  section.g-sprites.examples .fotorama-open-wrapper {
+    position: relative;
+    top: 20px;
     width: 100%;
   }
   section.g-sprites.examples .masonry-items > li .info {
